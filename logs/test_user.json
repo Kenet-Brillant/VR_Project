@@ -1,0 +1,56 @@
+{
+  "user": "test_user",
+  "sessions": [
+    {
+      "user": "test_user",
+      "event": "boule_cliquee",
+      "boule_id": 1,
+      "timestamp": 1773994220.4241092,
+      "date": "2026-03-20 09:10:20"
+    },
+    {
+      "user": "test_user",
+      "event": "boule_cliquee",
+      "boule_id": 2,
+      "timestamp": 1773994221.925574,
+      "date": "2026-03-20 09:10:21"
+    },
+    {
+      "user": "test_user",
+      "event": "boule_cliquee",
+      "boule_id": 3,
+      "timestamp": 1773994223.4262285,
+      "date": "2026-03-20 09:10:23"
+    },
+    {
+      "user": "test_user",
+      "event": "boule_cliquee",
+      "boule_id": 4,
+      "timestamp": 1773994224.9277656,
+      "date": "2026-03-20 09:10:24"
+    },
+    {
+      "user": "test_user",
+      "event": "boule_cliquee",
+      "boule_id": 5,
+      "timestamp": 1773994226.429301,
+      "date": "2026-03-20 09:10:26"
+    },
+    {
+      "user": "test_user",
+      "event": "boule_cliquee",
+      "boule_id": 6,
+      "timestamp": 1773994227.9308076,
+      "date": "2026-03-20 09:10:27"
+    },
+    {
+      "user": "test_user",
+      "event": "round_termine",
+      "nb_boules": 6,
+      "nouveau_rayon": 3.89,
+      "duree_secondes": 9.0,
+      "timestamp": 1773994229.4322567,
+      "date": "2026-03-20 09:10:29"
+    }
+  ]
+}

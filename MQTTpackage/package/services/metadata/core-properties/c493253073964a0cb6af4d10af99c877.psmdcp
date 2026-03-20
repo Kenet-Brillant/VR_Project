@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<coreProperties xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.openxmlformats.org/package/2006/metadata/core-properties">
+  <dc:creator>The contributors of MQTTnet</dc:creator>
+  <dc:description>MQTTnet is a high performance .NET library for MQTT based communication. It provides a MQTT client and a MQTT server (broker) and supports v3.1.0, v3.1.1 and v5.0.0 of the MQTT protocol.</dc:description>
+  <dc:identifier>MQTTnet</dc:identifier>
+  <version>4.3.7.1207</version>
+  <keywords>MQTT Message Queue Telemetry Transport MQTTClient MQTTServer Server MQTTBroker Broker NETStandard IoT InternetOfThings Messaging Hardware Arduino Sensor Actuator M2M ESP Smart Home Cities Automation Xamarin Blazor</keywords>
+  <lastModifiedBy>NuGet.Build.Tasks.Pack, Version=6.11.0.122, Culture=neutral, PublicKeyToken=31bf3856ad364e35;Microsoft Windows NT 10.0.20348.0;.NET Framework 4.7.2</lastModifiedBy>
+</coreProperties>
