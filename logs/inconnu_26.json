@@ -1,0 +1,822 @@
+{
+  "user": "inconnu",
+  "fichier": 26,
+  "events": [
+    {
+      "taille": 1.4,
+      "nombre": 5,
+      "rayon_cercle": 3.1,
+      "timestamp": 1776932071.5992093,
+      "date": "2026-04-23 10:14:31",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.8,
+      "nombre": 9,
+      "rayon_cercle": 3.6,
+      "timestamp": 1776932071.651377,
+      "date": "2026-04-23 10:14:31",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 2.0,
+      "nombre": 7,
+      "rayon_cercle": 1.2,
+      "timestamp": 1776932071.7023983,
+      "date": "2026-04-23 10:14:31",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.6,
+      "nombre": 6,
+      "rayon_cercle": 4.5,
+      "timestamp": 1776932071.7554202,
+      "date": "2026-04-23 10:14:31",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.2,
+      "nombre": 7,
+      "rayon_cercle": 6.4,
+      "timestamp": 1776932071.8065813,
+      "date": "2026-04-23 10:14:31",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.5,
+      "nombre": 15,
+      "rayon_cercle": 3.9,
+      "timestamp": 1776932071.8576198,
+      "date": "2026-04-23 10:14:31",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 3.0,
+      "nombre": 16,
+      "rayon_cercle": 3.3,
+      "timestamp": 1776932071.908346,
+      "date": "2026-04-23 10:14:31",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 2.7,
+      "nombre": 12,
+      "rayon_cercle": 6.3,
+      "timestamp": 1776932071.9600549,
+      "date": "2026-04-23 10:14:31",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 2.7,
+      "nombre": 19,
+      "rayon_cercle": 1.9,
+      "timestamp": 1776932072.0110362,
+      "date": "2026-04-23 10:14:32",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.8,
+      "nombre": 15,
+      "rayon_cercle": 2.4,
+      "timestamp": 1776932072.0620015,
+      "date": "2026-04-23 10:14:32",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.3,
+      "nombre": 11,
+      "rayon_cercle": 8.3,
+      "timestamp": 1776932072.113805,
+      "date": "2026-04-23 10:14:32",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.3,
+      "nombre": 17,
+      "rayon_cercle": 6.1,
+      "timestamp": 1776932072.1672468,
+      "date": "2026-04-23 10:14:32",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.8,
+      "nombre": 7,
+      "rayon_cercle": 5.2,
+      "timestamp": 1776932072.218668,
+      "date": "2026-04-23 10:14:32",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.7,
+      "nombre": 17,
+      "rayon_cercle": 6.0,
+      "timestamp": 1776932072.2695932,
+      "date": "2026-04-23 10:14:32",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.6,
+      "nombre": 5,
+      "rayon_cercle": 4.7,
+      "timestamp": 1776932072.320444,
+      "date": "2026-04-23 10:14:32",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.8,
+      "nombre": 5,
+      "rayon_cercle": 6.0,
+      "timestamp": 1776932072.3735738,
+      "date": "2026-04-23 10:14:32",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 2.0,
+      "nombre": 9,
+      "rayon_cercle": 5.2,
+      "timestamp": 1776932072.4248245,
+      "date": "2026-04-23 10:14:32",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.9,
+      "nombre": 12,
+      "rayon_cercle": 7.1,
+      "timestamp": 1776932072.4765432,
+      "date": "2026-04-23 10:14:32",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.9,
+      "nombre": 12,
+      "rayon_cercle": 5.0,
+      "timestamp": 1776932072.5288327,
+      "date": "2026-04-23 10:14:32",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.3,
+      "nombre": 13,
+      "rayon_cercle": 7.8,
+      "timestamp": 1776932072.5808315,
+      "date": "2026-04-23 10:14:32",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 2.9,
+      "nombre": 14,
+      "rayon_cercle": 6.1,
+      "timestamp": 1776932072.6319544,
+      "date": "2026-04-23 10:14:32",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.8,
+      "nombre": 13,
+      "rayon_cercle": 1.9,
+      "timestamp": 1776932072.6830263,
+      "date": "2026-04-23 10:14:32",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.6,
+      "nombre": 18,
+      "rayon_cercle": 1.2,
+      "timestamp": 1776932072.7347503,
+      "date": "2026-04-23 10:14:32",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 2.0,
+      "nombre": 18,
+      "rayon_cercle": 2.6,
+      "timestamp": 1776932072.7864206,
+      "date": "2026-04-23 10:14:32",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 2.0,
+      "nombre": 5,
+      "rayon_cercle": 9.2,
+      "timestamp": 1776932072.8375626,
+      "date": "2026-04-23 10:14:32",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.5,
+      "nombre": 15,
+      "rayon_cercle": 3.2,
+      "timestamp": 1776932072.8894296,
+      "date": "2026-04-23 10:14:32",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.5,
+      "nombre": 12,
+      "rayon_cercle": 6.6,
+      "timestamp": 1776932072.940327,
+      "date": "2026-04-23 10:14:32",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.6,
+      "nombre": 6,
+      "rayon_cercle": 6.8,
+      "timestamp": 1776932072.9911664,
+      "date": "2026-04-23 10:14:32",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 2.7,
+      "nombre": 7,
+      "rayon_cercle": 8.7,
+      "timestamp": 1776932073.0421093,
+      "date": "2026-04-23 10:14:33",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.2,
+      "nombre": 2,
+      "rayon_cercle": 1.0,
+      "timestamp": 1776932073.0929453,
+      "date": "2026-04-23 10:14:33",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.2,
+      "nombre": 18,
+      "rayon_cercle": 6.4,
+      "timestamp": 1776932073.1443312,
+      "date": "2026-04-23 10:14:33",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 19,
+      "rayon_cercle": 1.4,
+      "timestamp": 1776932073.1962175,
+      "date": "2026-04-23 10:14:33",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.1,
+      "nombre": 9,
+      "rayon_cercle": 1.6,
+      "timestamp": 1776932073.2471242,
+      "date": "2026-04-23 10:14:33",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 2.8,
+      "nombre": 5,
+      "rayon_cercle": 1.4,
+      "timestamp": 1776932073.2985902,
+      "date": "2026-04-23 10:14:33",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 2.6,
+      "nombre": 8,
+      "rayon_cercle": 7.6,
+      "timestamp": 1776932073.3507047,
+      "date": "2026-04-23 10:14:33",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.7,
+      "nombre": 2,
+      "rayon_cercle": 7.5,
+      "timestamp": 1776932073.4028876,
+      "date": "2026-04-23 10:14:33",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.2,
+      "nombre": 5,
+      "rayon_cercle": 5.4,
+      "timestamp": 1776932073.455207,
+      "date": "2026-04-23 10:14:33",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 2.9,
+      "nombre": 8,
+      "rayon_cercle": 9.5,
+      "timestamp": 1776932073.5072057,
+      "date": "2026-04-23 10:14:33",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 2.5,
+      "nombre": 9,
+      "rayon_cercle": 2.5,
+      "timestamp": 1776932073.5613847,
+      "date": "2026-04-23 10:14:33",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 2.7,
+      "nombre": 10,
+      "rayon_cercle": 4.6,
+      "timestamp": 1776932073.6128879,
+      "date": "2026-04-23 10:14:33",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 2.3,
+      "nombre": 7,
+      "rayon_cercle": 1.3,
+      "timestamp": 1776932073.6643584,
+      "date": "2026-04-23 10:14:33",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.9,
+      "nombre": 9,
+      "rayon_cercle": 9.1,
+      "timestamp": 1776932073.7169282,
+      "date": "2026-04-23 10:14:33",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.9,
+      "nombre": 12,
+      "rayon_cercle": 4.4,
+      "timestamp": 1776932073.7678475,
+      "date": "2026-04-23 10:14:33",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.9,
+      "nombre": 16,
+      "rayon_cercle": 1.2,
+      "timestamp": 1776932073.8217897,
+      "date": "2026-04-23 10:14:33",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 2.5,
+      "nombre": 14,
+      "rayon_cercle": 3.5,
+      "timestamp": 1776932073.873135,
+      "date": "2026-04-23 10:14:33",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 2.9,
+      "nombre": 19,
+      "rayon_cercle": 6.1,
+      "timestamp": 1776932073.9248042,
+      "date": "2026-04-23 10:14:33",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 2.9,
+      "nombre": 8,
+      "rayon_cercle": 2.3,
+      "timestamp": 1776932073.9757473,
+      "date": "2026-04-23 10:14:33",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 3.0,
+      "nombre": 13,
+      "rayon_cercle": 4.3,
+      "timestamp": 1776932074.0274496,
+      "date": "2026-04-23 10:14:34",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 8,
+      "rayon_cercle": 8.8,
+      "timestamp": 1776932074.0803702,
+      "date": "2026-04-23 10:14:34",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.4,
+      "nombre": 7,
+      "rayon_cercle": 2.3,
+      "timestamp": 1776932074.1318774,
+      "date": "2026-04-23 10:14:34",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 2.4,
+      "nombre": 17,
+      "rayon_cercle": 4.1,
+      "timestamp": 1776932074.1831207,
+      "date": "2026-04-23 10:14:34",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.2,
+      "nombre": 17,
+      "rayon_cercle": 4.7,
+      "timestamp": 1776932074.2348235,
+      "date": "2026-04-23 10:14:34",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 2.4,
+      "nombre": 15,
+      "rayon_cercle": 5.3,
+      "timestamp": 1776932074.286173,
+      "date": "2026-04-23 10:14:34",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 2.5,
+      "nombre": 19,
+      "rayon_cercle": 2.2,
+      "timestamp": 1776932074.3379848,
+      "date": "2026-04-23 10:14:34",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 10,
+      "rayon_cercle": 1.1,
+      "timestamp": 1776932074.389365,
+      "date": "2026-04-23 10:14:34",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.6,
+      "nombre": 11,
+      "rayon_cercle": 7.8,
+      "timestamp": 1776932074.442101,
+      "date": "2026-04-23 10:14:34",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.5,
+      "nombre": 8,
+      "rayon_cercle": 7.9,
+      "timestamp": 1776932074.493802,
+      "date": "2026-04-23 10:14:34",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 2.5,
+      "nombre": 3,
+      "rayon_cercle": 1.2,
+      "timestamp": 1776932074.5461235,
+      "date": "2026-04-23 10:14:34",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 2.5,
+      "nombre": 4,
+      "rayon_cercle": 8.7,
+      "timestamp": 1776932074.5979612,
+      "date": "2026-04-23 10:14:34",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.6,
+      "nombre": 16,
+      "rayon_cercle": 6.6,
+      "timestamp": 1776932074.6503754,
+      "date": "2026-04-23 10:14:34",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 2.3,
+      "nombre": 9,
+      "rayon_cercle": 2.7,
+      "timestamp": 1776932074.7011597,
+      "date": "2026-04-23 10:14:34",
+      "_topic": "unity/commands"
+    },
+    {
+      "type": "robot_config",
+      "base_arm_1": [
+        -30.0,
+        0.0
+      ],
+      "base_arm_2": [
+        30.0,
+        0.0
+      ],
+      "panel_width": 120.0,
+      "panel_height": 120.0,
+      "arm_length": 130.0,
+      "distance_between_motors": 60.0,
+      "workspace": {
+        "min_x": -60.0,
+        "max_x": 60.0,
+        "min_y": 93.93187537893891,
+        "max_y": 213.9318753789389
+      },
+      "timestamp": 1764337395.4781141,
+      "date": "2025-11-28 14:43:15",
+      "_topic": "test/robot_config"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 16,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932258.8674762,
+      "date": "2026-04-23 10:17:38",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 6,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932259.0686674,
+      "date": "2026-04-23 10:17:39",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 8,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932259.269256,
+      "date": "2026-04-23 10:17:39",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 19,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932259.4700584,
+      "date": "2026-04-23 10:17:39",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 8,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932259.670767,
+      "date": "2026-04-23 10:17:39",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 17,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932259.8714435,
+      "date": "2026-04-23 10:17:39",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 4,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932260.0724037,
+      "date": "2026-04-23 10:17:40",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 19,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932260.2730114,
+      "date": "2026-04-23 10:17:40",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 5,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932260.4735255,
+      "date": "2026-04-23 10:17:40",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 15,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932260.6745577,
+      "date": "2026-04-23 10:17:40",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 11,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932260.8753395,
+      "date": "2026-04-23 10:17:40",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 8,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932261.076078,
+      "date": "2026-04-23 10:17:41",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 12,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932261.2769866,
+      "date": "2026-04-23 10:17:41",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 11,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932261.4779112,
+      "date": "2026-04-23 10:17:41",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 5,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932261.678809,
+      "date": "2026-04-23 10:17:41",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 19,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932261.8797295,
+      "date": "2026-04-23 10:17:41",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 7,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932262.080702,
+      "date": "2026-04-23 10:17:42",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 17,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932262.2813585,
+      "date": "2026-04-23 10:17:42",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 6,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932262.4829307,
+      "date": "2026-04-23 10:17:42",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 19,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932262.6837506,
+      "date": "2026-04-23 10:17:42",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 7,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932262.8860729,
+      "date": "2026-04-23 10:17:42",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 6,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932263.087023,
+      "date": "2026-04-23 10:17:43",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 5,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932263.2880757,
+      "date": "2026-04-23 10:17:43",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 11,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932263.488576,
+      "date": "2026-04-23 10:17:43",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 19,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932263.6892078,
+      "date": "2026-04-23 10:17:43",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 5,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932263.8899863,
+      "date": "2026-04-23 10:17:43",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 3,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932264.0909212,
+      "date": "2026-04-23 10:17:44",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 10,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932264.2916672,
+      "date": "2026-04-23 10:17:44",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 11,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932264.492474,
+      "date": "2026-04-23 10:17:44",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 19,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932264.6929085,
+      "date": "2026-04-23 10:17:44",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 11,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932264.893403,
+      "date": "2026-04-23 10:17:44",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 8,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932265.0941634,
+      "date": "2026-04-23 10:17:45",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 4,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932265.2947447,
+      "date": "2026-04-23 10:17:45",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 8,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932265.4957101,
+      "date": "2026-04-23 10:17:45",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 12,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932265.6967707,
+      "date": "2026-04-23 10:17:45",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 2,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932265.8982687,
+      "date": "2026-04-23 10:17:45",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 6,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932266.0993931,
+      "date": "2026-04-23 10:17:46",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 4,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776932266.300233,
+      "date": "2026-04-23 10:17:46",
+      "_topic": "unity/commands"
+    }
+  ]
+}

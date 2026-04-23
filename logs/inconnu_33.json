@@ -1,0 +1,784 @@
+{
+  "user": "inconnu",
+  "fichier": 33,
+  "events": [
+    {
+      "fps": 128.7,
+      "nb_objets": 23,
+      "timestamp": 1776932889.26027,
+      "date": "2026-04-23 10:28:09",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "vitesse": 11.0,
+      "intervalle": 1.5,
+      "points": 1,
+      "timestamp": 1776932889.4424415,
+      "date": "2026-04-23 10:28:09",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 13.9,
+      "intervalle": 1.5,
+      "points": 1,
+      "timestamp": 1776932889.6433914,
+      "date": "2026-04-23 10:28:09",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "fps": 116.8,
+      "nb_objets": 22,
+      "timestamp": 1776932889.76856,
+      "date": "2026-04-23 10:28:09",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "vitesse": 10.2,
+      "intervalle": 1.5,
+      "points": 1,
+      "timestamp": 1776932889.8449152,
+      "date": "2026-04-23 10:28:09",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 7.1,
+      "intervalle": 1.5,
+      "points": 1,
+      "timestamp": 1776932890.046126,
+      "date": "2026-04-23 10:28:10",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 14.0,
+      "intervalle": 1.5,
+      "points": 1,
+      "timestamp": 1776932890.248217,
+      "date": "2026-04-23 10:28:10",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "fps": 134.2,
+      "nb_objets": 23,
+      "timestamp": 1776932890.26921,
+      "date": "2026-04-23 10:28:10",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "vitesse": 15.7,
+      "intervalle": 1.5,
+      "points": 1,
+      "timestamp": 1776932890.4502013,
+      "date": "2026-04-23 10:28:10",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 19.7,
+      "intervalle": 1.5,
+      "points": 1,
+      "timestamp": 1776932890.6519675,
+      "date": "2026-04-23 10:28:10",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "fps": 133,
+      "nb_objets": 22,
+      "timestamp": 1776932890.77842,
+      "date": "2026-04-23 10:28:10",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "vitesse": 9.8,
+      "intervalle": 1.5,
+      "points": 1,
+      "timestamp": 1776932890.853143,
+      "date": "2026-04-23 10:28:10",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 16.7,
+      "intervalle": 1.5,
+      "points": 1,
+      "timestamp": 1776932891.055231,
+      "date": "2026-04-23 10:28:11",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 18.7,
+      "intervalle": 1.5,
+      "points": 1,
+      "timestamp": 1776932891.2561731,
+      "date": "2026-04-23 10:28:11",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "fps": 115.1,
+      "nb_objets": 22,
+      "timestamp": 1776932891.28531,
+      "date": "2026-04-23 10:28:11",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "vitesse": 16.3,
+      "intervalle": 1.5,
+      "points": 1,
+      "timestamp": 1776932891.4573612,
+      "date": "2026-04-23 10:28:11",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 14.3,
+      "intervalle": 1.5,
+      "points": 1,
+      "timestamp": 1776932891.6598794,
+      "date": "2026-04-23 10:28:11",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "fps": 122,
+      "nb_objets": 23,
+      "timestamp": 1776932891.79106,
+      "date": "2026-04-23 10:28:11",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "vitesse": 6.1,
+      "intervalle": 1.5,
+      "points": 1,
+      "timestamp": 1776932891.8616745,
+      "date": "2026-04-23 10:28:11",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 9.2,
+      "intervalle": 1.5,
+      "points": 1,
+      "timestamp": 1776932892.0631557,
+      "date": "2026-04-23 10:28:12",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 16.1,
+      "intervalle": 1.5,
+      "points": 1,
+      "timestamp": 1776932892.2643042,
+      "date": "2026-04-23 10:28:12",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "fps": 134.9,
+      "nb_objets": 22,
+      "timestamp": 1776932892.29126,
+      "date": "2026-04-23 10:28:12",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "vitesse": 17.7,
+      "intervalle": 1.5,
+      "points": 1,
+      "timestamp": 1776932892.4656737,
+      "date": "2026-04-23 10:28:12",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 11.9,
+      "intervalle": 1.5,
+      "points": 1,
+      "timestamp": 1776932892.6670594,
+      "date": "2026-04-23 10:28:12",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "fps": 148.7,
+      "nb_objets": 22,
+      "timestamp": 1776932892.79643,
+      "date": "2026-04-23 10:28:12",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "vitesse": 7.3,
+      "intervalle": 1.5,
+      "points": 1,
+      "timestamp": 1776932892.868372,
+      "date": "2026-04-23 10:28:12",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.7,
+      "intervalle": 1.5,
+      "points": 1,
+      "timestamp": 1776932893.0693793,
+      "date": "2026-04-23 10:28:13",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 18.1,
+      "intervalle": 1.5,
+      "points": 1,
+      "timestamp": 1776932893.2706692,
+      "date": "2026-04-23 10:28:13",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "fps": 100.7,
+      "nb_objets": 23,
+      "timestamp": 1776932893.30984,
+      "date": "2026-04-23 10:28:13",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "vitesse": 16.1,
+      "intervalle": 1.5,
+      "points": 1,
+      "timestamp": 1776932893.471701,
+      "date": "2026-04-23 10:28:13",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 17.4,
+      "intervalle": 1.5,
+      "points": 1,
+      "timestamp": 1776932893.6727676,
+      "date": "2026-04-23 10:28:13",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "fps": 109.4,
+      "nb_objets": 23,
+      "timestamp": 1776932893.81212,
+      "date": "2026-04-23 10:28:13",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "vitesse": 17.4,
+      "intervalle": 1.5,
+      "points": 1,
+      "timestamp": 1776932893.8738801,
+      "date": "2026-04-23 10:28:13",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 16.0,
+      "intervalle": 1.5,
+      "points": 1,
+      "timestamp": 1776932894.0753853,
+      "date": "2026-04-23 10:28:14",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 19.2,
+      "intervalle": 1.5,
+      "points": 1,
+      "timestamp": 1776932894.2766612,
+      "date": "2026-04-23 10:28:14",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "fps": 161.7,
+      "nb_objets": 22,
+      "timestamp": 1776932894.31519,
+      "date": "2026-04-23 10:28:14",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.3,
+      "points": 2,
+      "timestamp": 1776932894.479385,
+      "date": "2026-04-23 10:28:14",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.2,
+      "points": 2,
+      "timestamp": 1776932894.5811055,
+      "date": "2026-04-23 10:28:14",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.3,
+      "points": 2,
+      "timestamp": 1776932894.6822166,
+      "date": "2026-04-23 10:28:14",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.2,
+      "points": 2,
+      "timestamp": 1776932894.7834797,
+      "date": "2026-04-23 10:28:14",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "fps": 129.2,
+      "nb_objets": 23,
+      "timestamp": 1776932894.81705,
+      "date": "2026-04-23 10:28:14",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.4,
+      "points": 2,
+      "timestamp": 1776932894.8842897,
+      "date": "2026-04-23 10:28:14",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.3,
+      "points": 2,
+      "timestamp": 1776932894.9858298,
+      "date": "2026-04-23 10:28:14",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.4,
+      "points": 2,
+      "timestamp": 1776932895.0868196,
+      "date": "2026-04-23 10:28:15",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.5,
+      "points": 2,
+      "timestamp": 1776932895.1882362,
+      "date": "2026-04-23 10:28:15",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.3,
+      "points": 2,
+      "timestamp": 1776932895.290039,
+      "date": "2026-04-23 10:28:15",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "fps": 132.1,
+      "nb_objets": 23,
+      "timestamp": 1776932895.32314,
+      "date": "2026-04-23 10:28:15",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.4,
+      "points": 2,
+      "timestamp": 1776932895.3915825,
+      "date": "2026-04-23 10:28:15",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.4,
+      "points": 2,
+      "timestamp": 1776932895.49272,
+      "date": "2026-04-23 10:28:15",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.5,
+      "points": 2,
+      "timestamp": 1776932895.5932841,
+      "date": "2026-04-23 10:28:15",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.5,
+      "points": 2,
+      "timestamp": 1776932895.6949134,
+      "date": "2026-04-23 10:28:15",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.2,
+      "points": 2,
+      "timestamp": 1776932895.7961895,
+      "date": "2026-04-23 10:28:15",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "fps": 130.3,
+      "nb_objets": 22,
+      "timestamp": 1776932895.82967,
+      "date": "2026-04-23 10:28:15",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.3,
+      "points": 2,
+      "timestamp": 1776932895.897311,
+      "date": "2026-04-23 10:28:15",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.3,
+      "points": 2,
+      "timestamp": 1776932895.9983337,
+      "date": "2026-04-23 10:28:15",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.5,
+      "points": 2,
+      "timestamp": 1776932896.0994756,
+      "date": "2026-04-23 10:28:16",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.2,
+      "points": 2,
+      "timestamp": 1776932896.2004547,
+      "date": "2026-04-23 10:28:16",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.4,
+      "points": 2,
+      "timestamp": 1776932896.3018553,
+      "date": "2026-04-23 10:28:16",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "fps": 131.8,
+      "nb_objets": 22,
+      "timestamp": 1776932896.33156,
+      "date": "2026-04-23 10:28:16",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.3,
+      "points": 2,
+      "timestamp": 1776932896.4044855,
+      "date": "2026-04-23 10:28:16",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.5,
+      "points": 2,
+      "timestamp": 1776932896.5077276,
+      "date": "2026-04-23 10:28:16",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.3,
+      "points": 2,
+      "timestamp": 1776932896.6116102,
+      "date": "2026-04-23 10:28:16",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.4,
+      "points": 2,
+      "timestamp": 1776932896.714627,
+      "date": "2026-04-23 10:28:16",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.4,
+      "points": 2,
+      "timestamp": 1776932896.8159766,
+      "date": "2026-04-23 10:28:16",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "fps": 142.1,
+      "nb_objets": 23,
+      "timestamp": 1776932896.83237,
+      "date": "2026-04-23 10:28:16",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.2,
+      "points": 2,
+      "timestamp": 1776932896.917131,
+      "date": "2026-04-23 10:28:16",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.4,
+      "points": 2,
+      "timestamp": 1776932897.0186229,
+      "date": "2026-04-23 10:28:17",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.2,
+      "points": 2,
+      "timestamp": 1776932897.1196923,
+      "date": "2026-04-23 10:28:17",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.5,
+      "points": 2,
+      "timestamp": 1776932897.222664,
+      "date": "2026-04-23 10:28:17",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.4,
+      "points": 2,
+      "timestamp": 1776932897.324769,
+      "date": "2026-04-23 10:28:17",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "fps": 139,
+      "nb_objets": 22,
+      "timestamp": 1776932897.3356,
+      "date": "2026-04-23 10:28:17",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.4,
+      "points": 2,
+      "timestamp": 1776932897.4261374,
+      "date": "2026-04-23 10:28:17",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.4,
+      "points": 2,
+      "timestamp": 1776932897.5273392,
+      "date": "2026-04-23 10:28:17",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.4,
+      "points": 2,
+      "timestamp": 1776932897.6283894,
+      "date": "2026-04-23 10:28:17",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.2,
+      "points": 2,
+      "timestamp": 1776932897.730939,
+      "date": "2026-04-23 10:28:17",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.4,
+      "points": 2,
+      "timestamp": 1776932897.8323176,
+      "date": "2026-04-23 10:28:17",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "fps": 122.4,
+      "nb_objets": 22,
+      "timestamp": 1776932897.83685,
+      "date": "2026-04-23 10:28:17",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.5,
+      "points": 2,
+      "timestamp": 1776932897.9335248,
+      "date": "2026-04-23 10:28:17",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.4,
+      "points": 2,
+      "timestamp": 1776932898.034559,
+      "date": "2026-04-23 10:28:18",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.4,
+      "points": 2,
+      "timestamp": 1776932898.1362555,
+      "date": "2026-04-23 10:28:18",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.4,
+      "points": 2,
+      "timestamp": 1776932898.237319,
+      "date": "2026-04-23 10:28:18",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.4,
+      "points": 2,
+      "timestamp": 1776932898.3382044,
+      "date": "2026-04-23 10:28:18",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "fps": 134.7,
+      "nb_objets": 23,
+      "timestamp": 1776932898.34175,
+      "date": "2026-04-23 10:28:18",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.4,
+      "points": 2,
+      "timestamp": 1776932898.4395225,
+      "date": "2026-04-23 10:28:18",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.3,
+      "points": 2,
+      "timestamp": 1776932898.541485,
+      "date": "2026-04-23 10:28:18",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.4,
+      "points": 2,
+      "timestamp": 1776932898.6424365,
+      "date": "2026-04-23 10:28:18",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.2,
+      "points": 2,
+      "timestamp": 1776932898.7445512,
+      "date": "2026-04-23 10:28:18",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "fps": 154.3,
+      "nb_objets": 22,
+      "timestamp": 1776932898.84451,
+      "date": "2026-04-23 10:28:18",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.3,
+      "points": 2,
+      "timestamp": 1776932898.8458545,
+      "date": "2026-04-23 10:28:18",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.5,
+      "points": 2,
+      "timestamp": 1776932898.9469357,
+      "date": "2026-04-23 10:28:18",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.4,
+      "points": 2,
+      "timestamp": 1776932899.0479903,
+      "date": "2026-04-23 10:28:19",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.4,
+      "points": 2,
+      "timestamp": 1776932899.1495907,
+      "date": "2026-04-23 10:28:19",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.5,
+      "points": 2,
+      "timestamp": 1776932899.2504852,
+      "date": "2026-04-23 10:28:19",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "fps": 117.3,
+      "nb_objets": 22,
+      "timestamp": 1776932899.34905,
+      "date": "2026-04-23 10:28:19",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.5,
+      "points": 2,
+      "timestamp": 1776932899.3516052,
+      "date": "2026-04-23 10:28:19",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 10.0,
+      "intervalle": 0.4,
+      "points": 2,
+      "timestamp": 1776932899.4531012,
+      "date": "2026-04-23 10:28:19",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 30.0,
+      "intervalle": 1.0,
+      "points": 10,
+      "timestamp": 1776932899.5553324,
+      "date": "2026-04-23 10:28:19",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "vitesse": 30.0,
+      "intervalle": 1.0,
+      "points": 10,
+      "timestamp": 1776932899.7065372,
+      "date": "2026-04-23 10:28:19",
+      "_topic": "unity/obstacle/commands"
+    },
+    {
+      "fps": 114.5,
+      "nb_objets": 23,
+      "timestamp": 1776932899.85431,
+      "date": "2026-04-23 10:28:19",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "vitesse": 30.0,
+      "intervalle": 1.0,
+      "points": 10,
+      "timestamp": 1776932899.8573751,
+      "date": "2026-04-23 10:28:19",
+      "_topic": "unity/obstacle/commands"
+    }
+  ]
+}

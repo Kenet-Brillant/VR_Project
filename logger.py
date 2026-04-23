@@ -1,199 +1,215 @@
-"""
-logger.py
----------
-Logger MQTT pour le jeu des boules.
-- Écoute les messages MQTT du jeu
-- Accumule les clics du round en cours
-- Génère un résumé complet à la fin de chaque round dans logs/<user>.json
-
-Installation : pip install paho-mqtt
-Usage        : python logger.py
-
-Pour tester sans Unity :
-             python logger.py --simulate
-"""
-
 import json
 import os
 import time
 import argparse
-import random
 from datetime import datetime
 import paho.mqtt.client as mqtt
 
 # ─── CONFIG ───────────────────────────────────────────────────────────────────
-BROKER_HOST = "devweb.estia.fr"
-BROKER_PORT = 1883
-USERNAME    = "estia"
-PASSWORD    = "*aZ9#r8X7"
+BROKER_HOST     = "devweb.estia.fr"
+BROKER_PORT     = 1883
+USERNAME        = "estia"
+PASSWORD        = "*aZ9#r8X7"
 
-TOPIC_JEU   = "jeu/boules/#"
-LOGS_DIR    = "logs"
-# ──────────────────────────────────────────────────────────────────────────────
-
-# ─── ÉTAT EN MÉMOIRE ──────────────────────────────────────────────────────────
-clics_en_cours = {}
-# ──────────────────────────────────────────────────────────────────────────────
+DEFAULT_TOPIC   = "#"
+LOGS_DIR        = "logs"
+MAX_EVENTS      = 100       # Nombre maximum d'événements par fichier
 
 
-# ─── UTILITAIRES ──────────────────────────────────────────────────────────────
+# ─── GESTION DES FICHIERS ─────────────────────────────────────────────────────
 
-def get_log_filepath(user: str) -> str:
+def get_log_filepath(user: str, numero: int) -> str:
+    """
+    Retourne le chemin du fichier log pour un user et un numéro de fichier.
+    Exemples :
+      numero=1 → logs/joueur_1.json
+      numero=2 → logs/joueur_1_2.json
+      numero=3 → logs/joueur_1_3.json
+    """
     os.makedirs(LOGS_DIR, exist_ok=True)
-    return os.path.join(LOGS_DIR, f"{user}.json")
+    if numero == 1:
+        return os.path.join(LOGS_DIR, f"{user}.json")
+    else:
+        return os.path.join(LOGS_DIR, f"{user}_{numero}.json")
 
 
-def load_user_data(user: str) -> dict:
-    filepath = get_log_filepath(user)
+def get_current_file_number(user: str) -> int:
+    """
+    Trouve le numéro du fichier actuel pour ce user.
+    C'est le dernier fichier qui existe et qui n'a pas encore atteint MAX_EVENTS.
+    """
+    numero = 1
+    while True:
+        filepath = get_log_filepath(user, numero)
+        if not os.path.exists(filepath):
+            # Ce fichier n'existe pas encore — c'est le prochain à créer
+            return numero
+        # Le fichier existe — vérifie s'il est plein
+        with open(filepath, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        events = data.get("events", [])
+        if len(events) < MAX_EVENTS:
+            # Pas encore plein — on utilise celui-ci
+            return numero
+        # Plein — on passe au suivant
+        numero += 1
+
+
+def load_user_data(user: str, numero: int) -> dict:
+    filepath = get_log_filepath(user, numero)
     if os.path.exists(filepath):
         with open(filepath, "r", encoding="utf-8") as f:
             data = json.load(f)
-        if "rounds" not in data:
-            data["rounds"] = []
+        if "events" not in data:
+            data["events"] = []
         return data
-    return {"user": user, "rounds": []}
+    return {"user": user, "fichier": numero, "events": []}
 
 
-def save_user_data(user: str, data: dict):
-    filepath = get_log_filepath(user)
+def save_user_data(user: str, numero: int, data: dict):
+    filepath = get_log_filepath(user, numero)
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
-    print(f"💾 Fichier sauvegardé : {os.path.abspath(filepath)}")
+    print(f"💾 Sauvegardé : {os.path.abspath(filepath)}")
 
 
-# ─── TRAITEMENT DES ÉVÉNEMENTS ────────────────────────────────────────────────
+# ─── ENREGISTREMENT D'UN ÉVÉNEMENT ───────────────────────────────────────────
 
-def traiter_boule_cliquee(payload: dict):
-    user     = payload.get("user", "inconnu")
-    boule_id = payload.get("boule_id", -1)
-    ts       = payload.get("timestamp", time.time())
+def log_event(topic: str, payload: dict):
+    """
+    Sauvegarde n'importe quel événement reçu.
+    - Si le fichier actuel a atteint 100 événements, un nouveau fichier est créé.
+    Convention minimale : le payload doit avoir 'user' et 'timestamp'.
+    """
+    user = payload.get("user", "inconnu")
 
-    if user not in clics_en_cours:
-        clics_en_cours[user] = []
+    if "date" not in payload:
+        payload["date"] = datetime.fromtimestamp(
+            payload.get("timestamp", time.time())
+        ).strftime("%Y-%m-%d %H:%M:%S")
 
-    clics_en_cours[user].append({"boule_id": boule_id, "timestamp": ts})
-    print(f"🖱️  [{user}] Boule {boule_id} cliquée ({len(clics_en_cours[user])} clic(s) ce round)")
+    payload["_topic"] = topic
 
-
-def traiter_round_termine(payload: dict):
-    user         = payload.get("user", "inconnu")
-    nb_boules    = payload.get("nb_boules", 0)
-    rayon        = round(payload.get("nouveau_rayon", 0), 3)
-    duree        = round(payload.get("duree_secondes", 0), 3)
-    ts           = payload.get("timestamp", time.time())
-    date_lisible = datetime.fromtimestamp(ts).strftime("%Y-%m-%d %H:%M:%S")
-
-    # Charger les données existantes pour calculer le numéro du round
-    data = load_user_data(user)
-    round_numero = len(data["rounds"]) + 1
-
-    # Structure plate — même disposition que l'ancienne version
-    round_data = {
-        "user"          : user,
-        "evenement"     : "round_termine",
-        "round_numero"  : round_numero,
-        "nb_boules"     : nb_boules,
-        "nouveau_rayon" : rayon,
-        "duree_secondes": duree,
-        "timestamp"     : ts,
-        "date"          : date_lisible
-    }
-
-    data["rounds"].append(round_data)
-    save_user_data(user, data)
-
-    # Réinitialiser les clics en mémoire pour ce joueur
-    clics_en_cours[user] = []
-
-    print(f"🏁 [{user}] Round {round_numero} terminé !")
-    print(json.dumps(round_data, indent=2, ensure_ascii=False))
+    event_type = payload.get("evenement") or payload.get("event", "inconnu")
+    print(f"📨 [{user}] {event_type} — topic: {topic}")
+    print(json.dumps(payload, indent=2, ensure_ascii=False))
     print("-" * 60)
 
+    # Trouve le bon fichier (ou en crée un nouveau si plein)
+    numero = get_current_file_number(user)
+    data   = load_user_data(user, numero)
 
-def log_event(payload: dict):
-    event_type = payload.get("event") or payload.get("evenement", "inconnu")
+    # Vérifie si on vient d'atteindre la limite
+    if len(data["events"]) >= MAX_EVENTS:
+        numero += 1
+        data = load_user_data(user, numero)
+        print(f"📁 Fichier plein ! Nouveau fichier : {get_log_filepath(user, numero)}")
 
-    if event_type == "boule_cliquee":
-        traiter_boule_cliquee(payload)
-    elif event_type == "round_termine":
-        traiter_round_termine(payload)
-    else:
-        print(f"⚠️  Événement inconnu : {event_type}")
+    data["events"].append(payload)
+    save_user_data(user, numero, data)
+
+    # Informe si on approche de la limite
+    nb = len(data["events"])
+    if nb == MAX_EVENTS:
+        print(f"⚠️  [{user}] Fichier {numero} plein ({MAX_EVENTS} événements). Le prochain événement créera un nouveau fichier.")
+    elif nb >= MAX_EVENTS - 10:
+        print(f"ℹ️  [{user}] Fichier {numero} : {nb}/{MAX_EVENTS} événements.")
 
 
-# ─── MQTT ─────────────────────────────────────────────────────────────────────
+# ─── MQTT ────────────────────────────────────────────────────────────────────
 
 def on_connect(client, userdata, flags, rc):
+    topic = userdata["topic"]
     if rc == 0:
-        print("✅ Connecté au broker MQTT !")
-        print(f"📡 En écoute sur le topic : {TOPIC_JEU}\n")
-        client.subscribe(TOPIC_JEU)
+        print(f"✅ Connecté au broker MQTT !")
+        print(f"📡 En écoute sur : {topic}\n")
+        client.subscribe(topic)
     else:
         print(f"❌ Erreur de connexion, code : {rc}")
 
 
 def on_message(client, userdata, msg):
+    topic = msg.topic
     try:
         payload = json.loads(msg.payload.decode("utf-8"))
-        log_event(payload)
+        log_event(topic, payload)
     except json.JSONDecodeError:
-        print(f"⚠️  Message non-JSON reçu sur {msg.topic} : {msg.payload}")
+        print(f"⚠️  Message non-JSON sur {topic} : {msg.payload}")
 
 
-# ─── MODE SIMULATION ──────────────────────────────────────────────────────────
+# ─── SIMULATION ──────────────────────────────────────────────────────────────
 
-def simulate(client):
-    print("🎮 Mode simulation activé — envoi de données fictives...\n")
-    user      = "test_user"
-    nb_boules = 6
+def simulate(client, topic_base: str):
+    """Simule des événements génériques pour tester le Logger."""
+    import random
+    print("🎮 Mode simulation activé...\n")
+    user = "test_user"
 
-    for boule_id in range(1, nb_boules + 1):
-        event = {
-            "user"      : user,
-            "event"     : "boule_cliquee",
-            "boule_id"  : boule_id,
-            "timestamp" : time.time()
-        }
-        client.publish("jeu/boules/evenement", json.dumps(event))
-        print(f"➡️  Publié : boule_cliquee (boule {boule_id})")
-        time.sleep(1.5)
+    event1 = {
+        "user"      : user,
+        "evenement" : "action_joueur",
+        "details"   : "clic sur objet",
+        "objet_id"  : 3,
+        "timestamp" : time.time()
+    }
+    client.publish(f"{topic_base}/evenement", json.dumps(event1))
+    print("➡️  Publié : action_joueur")
+    time.sleep(1)
 
-    event_fin = {
+    event2 = {
+        "user"      : user,
+        "evenement" : "score_mis_a_jour",
+        "score"     : random.randint(10, 100),
+        "timestamp" : time.time()
+    }
+    client.publish(f"{topic_base}/evenement", json.dumps(event2))
+    print("➡️  Publié : score_mis_a_jour")
+    time.sleep(1)
+
+    event3 = {
         "user"            : user,
-        "event"           : "round_termine",
-        "nb_boules"       : nb_boules,
-        "nouveau_rayon"   : round(random.uniform(1.5, 4.0), 2),
-        "duree_secondes"  : round(nb_boules * 1.5, 1),
+        "evenement"       : "session_terminee",
+        "duree_secondes"  : 42.5,
         "timestamp"       : time.time()
     }
-    client.publish("jeu/boules/evenement", json.dumps(event_fin))
-    print("➡️  Publié : round_termine")
-    print("\n✅ Simulation terminée ! Vérifie le fichier logs/test_user.json")
+    client.publish(f"{topic_base}/evenement", json.dumps(event3))
+    print("➡️  Publié : session_terminee")
+    print("\n✅ Simulation terminée ! Vérifie logs/test_user.json")
 
 
-# ─── MAIN ─────────────────────────────────────────────────────────────────────
+# ─── MAIN ────────────────────────────────────────────────────────────────────
 
 def main():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description="Logger MQTT générique pour Unity")
+    parser.add_argument(
+        "--topic",
+        type=str,
+        default=DEFAULT_TOPIC,
+        help=f"Topic MQTT à écouter (défaut: '{DEFAULT_TOPIC}')"
+    )
     parser.add_argument(
         "--simulate",
         action="store_true",
-        help="Envoie des données fictives pour tester le Logger"
+        help="Envoie des événements fictifs pour tester"
     )
     args = parser.parse_args()
 
-    client = mqtt.Client()
+    topic = args.topic
+
+    client = mqtt.Client(userdata={"topic": topic})
     client.username_pw_set(USERNAME, PASSWORD)
     client.on_connect = on_connect
     client.on_message = on_message
 
     print(f"🔌 Connexion à {BROKER_HOST}:{BROKER_PORT}...")
+    print(f"📋 Limite : {MAX_EVENTS} événements par fichier\n")
     client.connect(BROKER_HOST, BROKER_PORT, keepalive=60)
 
     if args.simulate:
+        topic_base = topic.rstrip("/#") or "jeu/test"
         client.loop_start()
         time.sleep(1)
-        simulate(client)
+        simulate(client, topic_base)
         time.sleep(2)
         client.loop_stop()
     else:

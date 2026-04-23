@@ -1,0 +1,121 @@
+{
+  "user": "joueur_1",
+  "rounds": [
+    {
+      "user": "joueur_1",
+      "evenement": "round_termine",
+      "round_numero": 1,
+      "nb_boules": 10,
+      "nouveau_rayon": 3.969,
+      "duree_secondes": 8.169,
+      "timestamp": 1774017752.812,
+      "date": "2026-03-20 15:42:32",
+      "ordre_clics": [
+        7,
+        8,
+        9,
+        10,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "temps_entre_clics": [
+        0.785,
+        0.791,
+        0.742,
+        0.646,
+        0.786,
+        0.841,
+        0.811,
+        0.744,
+        0.866
+      ]
+    },
+    {
+      "user": "joueur_1",
+      "evenement": "round_termine",
+      "round_numero": 2,
+      "nb_boules": 10,
+      "nouveau_rayon": 5.395,
+      "duree_secondes": 7.683,
+      "timestamp": 1774017875.396,
+      "date": "2026-03-20 15:44:35",
+      "ordre_clics": [
+        8,
+        9,
+        10,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "temps_entre_clics": [
+        0.7,
+        0.716,
+        0.68,
+        0.789,
+        1.425,
+        0.639,
+        0.68,
+        0.69,
+        0.657
+      ]
+    },
+    {
+      "user": "joueur_1",
+      "evenement": "round_termine",
+      "round_numero": 3,
+      "nb_boules": 10,
+      "nouveau_rayon": 4.932,
+      "duree_secondes": 9.427,
+      "timestamp": 1774018234.367,
+      "date": "2026-03-20 15:50:34"
+    },
+    {
+      "user": "joueur_1",
+      "evenement": "round_termine",
+      "round_numero": 4,
+      "nb_boules": 10,
+      "nouveau_rayon": 4.512,
+      "duree_secondes": 9.652,
+      "timestamp": 1774019366.834,
+      "date": "2026-03-20 16:09:26"
+    },
+    {
+      "user": "joueur_1",
+      "evenement": "round_termine",
+      "round_numero": 5,
+      "nb_boules": 16,
+      "nouveau_rayon": 5.312,
+      "duree_secondes": 43.217,
+      "timestamp": 1774020515.548,
+      "date": "2026-03-20 16:28:35"
+    },
+    {
+      "user": "joueur_1",
+      "evenement": "round_termine",
+      "round_numero": 6,
+      "nb_boules": 6,
+      "nouveau_rayon": 3.4,
+      "duree_secondes": 6.805,
+      "timestamp": 1774020545.754,
+      "date": "2026-03-20 16:29:05"
+    },
+    {
+      "user": "joueur_1",
+      "evenement": "round_termine",
+      "round_numero": 7,
+      "nb_boules": 11,
+      "nouveau_rayon": 5.329,
+      "duree_secondes": 18.234,
+      "timestamp": 1774020678.382,
+      "date": "2026-03-20 16:31:18"
+    }
+  ]
+}

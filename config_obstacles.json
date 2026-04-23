@@ -1,0 +1,84 @@
+{
+  "nom": "Stress test — Jeu d'obstacles",
+  "topic_commandes": "unity/obstacle/commands",
+  "delai_secondes": 0.15,
+  "phases": [
+    {
+      "nom": "Phase 1 — Vitesse progressive",
+      "description": "Vitesse de 5 à 20",
+      "nb_commandes": 40,
+      "delai_secondes": 0.2,
+      "parametres": {
+        "vitesse": {
+          "min": 5.0,
+          "max": 20.0
+        },
+        "intervalle": {
+          "valeur": 1.5
+        },
+        "points": {
+          "valeur": 1
+        }
+      }
+    },
+    {
+      "nom": "Phase 2 — Spawn intense",
+      "description": "Obstacles très fréquents",
+      "nb_commandes": 50,
+      "delai_secondes": 0.1,
+      "parametres": {
+        "vitesse": {
+          "valeur": 10.0
+        },
+        "intervalle": {
+          "min": 0.2,
+          "max": 0.5
+        },
+        "points": {
+          "valeur": 2
+        }
+      }
+    },
+    {
+      "nom": "Phase 3 — Vitesse max",
+      "description": "Obstacles ultra-rapides",
+      "nb_commandes": 30,
+      "delai_secondes": 0.15,
+      "parametres": {
+        "vitesse": {
+          "valeur": 30.0
+        },
+        "intervalle": {
+          "valeur": 1.0
+        },
+        "points": {
+          "valeur": 10
+        }
+      }
+    },
+    {
+      "nom": "Phase 4 — Chaos total",
+      "description": "Tout aléatoire",
+      "nb_commandes": 80,
+      "delai_secondes": 0.05,
+      "parametres": {
+        "vitesse": {
+          "min": 3.0,
+          "max": 30.0
+        },
+        "intervalle": {
+          "min": 0.1,
+          "max": 3.0
+        },
+        "points": {
+          "choix": [
+            1,
+            2,
+            5,
+            10
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,780 @@
+{
+  "user": "inconnu",
+  "fichier": 16,
+  "events": [
+    {
+      "taille": 1.0,
+      "nombre": 11,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776855853.459263,
+      "date": "2026-04-22 13:04:13",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 13,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776855853.6603875,
+      "date": "2026-04-22 13:04:13",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 14,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776855853.8629189,
+      "date": "2026-04-22 13:04:13",
+      "_topic": "unity/commands"
+    },
+    {
+      "fps": 104.6,
+      "nb_objets": 14,
+      "timestamp": 1776855853.92048,
+      "date": "2026-04-22 13:04:13",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 18,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776855854.0642962,
+      "date": "2026-04-22 13:04:14",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 8,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776855854.264969,
+      "date": "2026-04-22 13:04:14",
+      "_topic": "unity/commands"
+    },
+    {
+      "fps": 158.3,
+      "nb_objets": 14,
+      "timestamp": 1776855854.42337,
+      "date": "2026-04-22 13:04:14",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 18,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776855854.4660456,
+      "date": "2026-04-22 13:04:14",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 14,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776855854.666917,
+      "date": "2026-04-22 13:04:14",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 17,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776855854.8682678,
+      "date": "2026-04-22 13:04:14",
+      "_topic": "unity/commands"
+    },
+    {
+      "fps": 106.6,
+      "nb_objets": 14,
+      "timestamp": 1776855854.92691,
+      "date": "2026-04-22 13:04:14",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 5,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776855855.0708146,
+      "date": "2026-04-22 13:04:15",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 9,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776855855.2724016,
+      "date": "2026-04-22 13:04:15",
+      "_topic": "unity/commands"
+    },
+    {
+      "fps": 168.5,
+      "nb_objets": 14,
+      "timestamp": 1776855855.43469,
+      "date": "2026-04-22 13:04:15",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 6,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776855855.473024,
+      "date": "2026-04-22 13:04:15",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 5,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776855855.6741307,
+      "date": "2026-04-22 13:04:15",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 19,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776855855.874887,
+      "date": "2026-04-22 13:04:15",
+      "_topic": "unity/commands"
+    },
+    {
+      "fps": 101.3,
+      "nb_objets": 14,
+      "timestamp": 1776855855.93691,
+      "date": "2026-04-22 13:04:15",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 14,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776855856.0764568,
+      "date": "2026-04-22 13:04:16",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 6,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776855856.2774987,
+      "date": "2026-04-22 13:04:16",
+      "_topic": "unity/commands"
+    },
+    {
+      "fps": 130.7,
+      "nb_objets": 14,
+      "timestamp": 1776855856.44363,
+      "date": "2026-04-22 13:04:16",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 16,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776855856.4799955,
+      "date": "2026-04-22 13:04:16",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 15,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776855856.6811464,
+      "date": "2026-04-22 13:04:16",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.0,
+      "nombre": 18,
+      "rayon_cercle": 4.0,
+      "timestamp": 1776855856.8825786,
+      "date": "2026-04-22 13:04:16",
+      "_topic": "unity/commands"
+    },
+    {
+      "fps": 153.9,
+      "nb_objets": 14,
+      "timestamp": 1776855856.94559,
+      "date": "2026-04-22 13:04:16",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855857.0836816,
+      "date": "2026-04-22 13:04:17",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855857.1859837,
+      "date": "2026-04-22 13:04:17",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855857.2882853,
+      "date": "2026-04-22 13:04:17",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855857.3905668,
+      "date": "2026-04-22 13:04:17",
+      "_topic": "unity/commands"
+    },
+    {
+      "fps": 164.6,
+      "nb_objets": 14,
+      "timestamp": 1776855857.4508,
+      "date": "2026-04-22 13:04:17",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855857.494199,
+      "date": "2026-04-22 13:04:17",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855857.5959034,
+      "date": "2026-04-22 13:04:17",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855857.6970525,
+      "date": "2026-04-22 13:04:17",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855857.7981207,
+      "date": "2026-04-22 13:04:17",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855857.899153,
+      "date": "2026-04-22 13:04:17",
+      "_topic": "unity/commands"
+    },
+    {
+      "fps": 134.9,
+      "nb_objets": 14,
+      "timestamp": 1776855857.95432,
+      "date": "2026-04-22 13:04:17",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855858.00037,
+      "date": "2026-04-22 13:04:18",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855858.101952,
+      "date": "2026-04-22 13:04:18",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855858.2036386,
+      "date": "2026-04-22 13:04:18",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855858.304372,
+      "date": "2026-04-22 13:04:18",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855858.4056494,
+      "date": "2026-04-22 13:04:18",
+      "_topic": "unity/commands"
+    },
+    {
+      "fps": 123.2,
+      "nb_objets": 14,
+      "timestamp": 1776855858.45519,
+      "date": "2026-04-22 13:04:18",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855858.5069304,
+      "date": "2026-04-22 13:04:18",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855858.6076508,
+      "date": "2026-04-22 13:04:18",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855858.708884,
+      "date": "2026-04-22 13:04:18",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855858.8097343,
+      "date": "2026-04-22 13:04:18",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855858.911652,
+      "date": "2026-04-22 13:04:18",
+      "_topic": "unity/commands"
+    },
+    {
+      "fps": 140.3,
+      "nb_objets": 14,
+      "timestamp": 1776855858.96153,
+      "date": "2026-04-22 13:04:18",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855859.0140672,
+      "date": "2026-04-22 13:04:19",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855859.1162367,
+      "date": "2026-04-22 13:04:19",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855859.2184186,
+      "date": "2026-04-22 13:04:19",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855859.319284,
+      "date": "2026-04-22 13:04:19",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855859.42126,
+      "date": "2026-04-22 13:04:19",
+      "_topic": "unity/commands"
+    },
+    {
+      "fps": 147.5,
+      "nb_objets": 14,
+      "timestamp": 1776855859.46558,
+      "date": "2026-04-22 13:04:19",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855859.522409,
+      "date": "2026-04-22 13:04:19",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855859.6236877,
+      "date": "2026-04-22 13:04:19",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855859.7246084,
+      "date": "2026-04-22 13:04:19",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855859.8261907,
+      "date": "2026-04-22 13:04:19",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855859.9270601,
+      "date": "2026-04-22 13:04:19",
+      "_topic": "unity/commands"
+    },
+    {
+      "fps": 109.9,
+      "nb_objets": 14,
+      "timestamp": 1776855859.96831,
+      "date": "2026-04-22 13:04:19",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "taille": 0.5,
+      "nombre": 20,
+      "rayon_cercle": 8.0,
+      "timestamp": 1776855860.0278535,
+      "date": "2026-04-22 13:04:20",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 3.0,
+      "nombre": 2,
+      "rayon_cercle": 2.0,
+      "timestamp": 1776855860.1301968,
+      "date": "2026-04-22 13:04:20",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 3.0,
+      "nombre": 2,
+      "rayon_cercle": 2.0,
+      "timestamp": 1776855860.4319854,
+      "date": "2026-04-22 13:04:20",
+      "_topic": "unity/commands"
+    },
+    {
+      "fps": 151.7,
+      "nb_objets": 14,
+      "timestamp": 1776855860.47845,
+      "date": "2026-04-22 13:04:20",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "taille": 3.0,
+      "nombre": 2,
+      "rayon_cercle": 2.0,
+      "timestamp": 1776855860.7335758,
+      "date": "2026-04-22 13:04:20",
+      "_topic": "unity/commands"
+    },
+    {
+      "fps": 127.9,
+      "nb_objets": 14,
+      "timestamp": 1776855860.981,
+      "date": "2026-04-22 13:04:20",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "taille": 3.0,
+      "nombre": 2,
+      "rayon_cercle": 2.0,
+      "timestamp": 1776855861.035007,
+      "date": "2026-04-22 13:04:21",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 3.0,
+      "nombre": 2,
+      "rayon_cercle": 2.0,
+      "timestamp": 1776855861.3375766,
+      "date": "2026-04-22 13:04:21",
+      "_topic": "unity/commands"
+    },
+    {
+      "fps": 156.6,
+      "nb_objets": 14,
+      "timestamp": 1776855861.4849,
+      "date": "2026-04-22 13:04:21",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "taille": 3.0,
+      "nombre": 2,
+      "rayon_cercle": 2.0,
+      "timestamp": 1776855861.638528,
+      "date": "2026-04-22 13:04:21",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 3.0,
+      "nombre": 2,
+      "rayon_cercle": 2.0,
+      "timestamp": 1776855861.941086,
+      "date": "2026-04-22 13:04:21",
+      "_topic": "unity/commands"
+    },
+    {
+      "fps": 142.8,
+      "nb_objets": 14,
+      "timestamp": 1776855861.98982,
+      "date": "2026-04-22 13:04:21",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "taille": 3.0,
+      "nombre": 2,
+      "rayon_cercle": 2.0,
+      "timestamp": 1776855862.2430232,
+      "date": "2026-04-22 13:04:22",
+      "_topic": "unity/commands"
+    },
+    {
+      "fps": 155.7,
+      "nb_objets": 14,
+      "timestamp": 1776855862.49378,
+      "date": "2026-04-22 13:04:22",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "taille": 3.0,
+      "nombre": 2,
+      "rayon_cercle": 2.0,
+      "timestamp": 1776855862.543845,
+      "date": "2026-04-22 13:04:22",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 3.0,
+      "nombre": 2,
+      "rayon_cercle": 2.0,
+      "timestamp": 1776855862.8458455,
+      "date": "2026-04-22 13:04:22",
+      "_topic": "unity/commands"
+    },
+    {
+      "fps": 141.8,
+      "nb_objets": 14,
+      "timestamp": 1776855863.00016,
+      "date": "2026-04-22 13:04:23",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "taille": 3.0,
+      "nombre": 2,
+      "rayon_cercle": 2.0,
+      "timestamp": 1776855863.1470182,
+      "date": "2026-04-22 13:04:23",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 3.0,
+      "nombre": 2,
+      "rayon_cercle": 2.0,
+      "timestamp": 1776855863.44773,
+      "date": "2026-04-22 13:04:23",
+      "_topic": "unity/commands"
+    },
+    {
+      "fps": 163,
+      "nb_objets": 14,
+      "timestamp": 1776855863.50755,
+      "date": "2026-04-22 13:04:23",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "taille": 3.0,
+      "nombre": 2,
+      "rayon_cercle": 2.0,
+      "timestamp": 1776855863.7489643,
+      "date": "2026-04-22 13:04:23",
+      "_topic": "unity/commands"
+    },
+    {
+      "fps": 132,
+      "nb_objets": 14,
+      "timestamp": 1776855864.00853,
+      "date": "2026-04-22 13:04:24",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "taille": 3.0,
+      "nombre": 2,
+      "rayon_cercle": 2.0,
+      "timestamp": 1776855864.05006,
+      "date": "2026-04-22 13:04:24",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 3.0,
+      "nombre": 2,
+      "rayon_cercle": 2.0,
+      "timestamp": 1776855864.352306,
+      "date": "2026-04-22 13:04:24",
+      "_topic": "unity/commands"
+    },
+    {
+      "fps": 160.4,
+      "nb_objets": 14,
+      "timestamp": 1776855864.50919,
+      "date": "2026-04-22 13:04:24",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "taille": 3.0,
+      "nombre": 2,
+      "rayon_cercle": 2.0,
+      "timestamp": 1776855864.6535034,
+      "date": "2026-04-22 13:04:24",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 3.0,
+      "nombre": 2,
+      "rayon_cercle": 2.0,
+      "timestamp": 1776855864.9551291,
+      "date": "2026-04-22 13:04:24",
+      "_topic": "unity/commands"
+    },
+    {
+      "fps": 141,
+      "nb_objets": 14,
+      "timestamp": 1776855865.01256,
+      "date": "2026-04-22 13:04:25",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "taille": 3.0,
+      "nombre": 2,
+      "rayon_cercle": 2.0,
+      "timestamp": 1776855865.256718,
+      "date": "2026-04-22 13:04:25",
+      "_topic": "unity/commands"
+    },
+    {
+      "fps": 169.4,
+      "nb_objets": 14,
+      "timestamp": 1776855865.51265,
+      "date": "2026-04-22 13:04:25",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "taille": 3.0,
+      "nombre": 2,
+      "rayon_cercle": 2.0,
+      "timestamp": 1776855865.559313,
+      "date": "2026-04-22 13:04:25",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 3.0,
+      "nombre": 2,
+      "rayon_cercle": 2.0,
+      "timestamp": 1776855865.8602574,
+      "date": "2026-04-22 13:04:25",
+      "_topic": "unity/commands"
+    },
+    {
+      "fps": 141,
+      "nb_objets": 14,
+      "timestamp": 1776855866.01825,
+      "date": "2026-04-22 13:04:26",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "taille": 1.3,
+      "nombre": 8,
+      "rayon_cercle": 6.7,
+      "timestamp": 1776855866.1621892,
+      "date": "2026-04-22 13:04:26",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 2.9,
+      "nombre": 2,
+      "rayon_cercle": 1.9,
+      "timestamp": 1776855866.2145638,
+      "date": "2026-04-22 13:04:26",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.5,
+      "nombre": 18,
+      "rayon_cercle": 3.3,
+      "timestamp": 1776855866.267679,
+      "date": "2026-04-22 13:04:26",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.8,
+      "nombre": 10,
+      "rayon_cercle": 4.7,
+      "timestamp": 1776855866.3195264,
+      "date": "2026-04-22 13:04:26",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.4,
+      "nombre": 8,
+      "rayon_cercle": 1.5,
+      "timestamp": 1776855866.3710773,
+      "date": "2026-04-22 13:04:26",
+      "_topic": "unity/commands"
+    },
+    {
+      "taille": 1.6,
+      "nombre": 5,
+      "rayon_cercle": 8.8,
+      "timestamp": 1776855866.422424,
+      "date": "2026-04-22 13:04:26",
+      "_topic": "unity/commands"
+    },
+    {
+      "fps": 163.4,
+      "nb_objets": 14,
+      "timestamp": 1776855866.51874,
+      "date": "2026-04-22 13:04:26",
+      "_topic": "jeu/stress/fps"
+    }
+  ]
+}

@@ -1,0 +1,706 @@
+{
+  "user": "inconnu",
+  "fichier": 2,
+  "events": [
+    {
+      "fps": 169.6,
+      "nb_objets": 13,
+      "timestamp": 1776853698.52841,
+      "date": "2026-04-22 12:28:18",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 137.4,
+      "nb_objets": 13,
+      "timestamp": 1776853699.03177,
+      "date": "2026-04-22 12:28:19",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 138.9,
+      "nb_objets": 13,
+      "timestamp": 1776853699.53755,
+      "date": "2026-04-22 12:28:19",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 141.9,
+      "nb_objets": 13,
+      "timestamp": 1776853700.03817,
+      "date": "2026-04-22 12:28:20",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 162.3,
+      "nb_objets": 13,
+      "timestamp": 1776853700.54094,
+      "date": "2026-04-22 12:28:20",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 114.6,
+      "nb_objets": 13,
+      "timestamp": 1776853701.04544,
+      "date": "2026-04-22 12:28:21",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 126.8,
+      "nb_objets": 13,
+      "timestamp": 1776853701.54722,
+      "date": "2026-04-22 12:28:21",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 131,
+      "nb_objets": 13,
+      "timestamp": 1776853702.05197,
+      "date": "2026-04-22 12:28:22",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 149,
+      "nb_objets": 13,
+      "timestamp": 1776853702.55244,
+      "date": "2026-04-22 12:28:22",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 145.3,
+      "nb_objets": 13,
+      "timestamp": 1776853703.05824,
+      "date": "2026-04-22 12:28:23",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 134.9,
+      "nb_objets": 13,
+      "timestamp": 1776853703.5589,
+      "date": "2026-04-22 12:28:23",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 136.6,
+      "nb_objets": 13,
+      "timestamp": 1776853704.06432,
+      "date": "2026-04-22 12:28:24",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 140.4,
+      "nb_objets": 13,
+      "timestamp": 1776853704.57419,
+      "date": "2026-04-22 12:28:24",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 122.9,
+      "nb_objets": 13,
+      "timestamp": 1776853705.07664,
+      "date": "2026-04-22 12:28:25",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 141.2,
+      "nb_objets": 13,
+      "timestamp": 1776853705.58711,
+      "date": "2026-04-22 12:28:25",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 147.8,
+      "nb_objets": 13,
+      "timestamp": 1776853706.09109,
+      "date": "2026-04-22 12:28:26",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 145,
+      "nb_objets": 13,
+      "timestamp": 1776853706.59289,
+      "date": "2026-04-22 12:28:26",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 142.2,
+      "nb_objets": 13,
+      "timestamp": 1776853707.09387,
+      "date": "2026-04-22 12:28:27",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 149,
+      "nb_objets": 13,
+      "timestamp": 1776853707.59708,
+      "date": "2026-04-22 12:28:27",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 157.1,
+      "nb_objets": 13,
+      "timestamp": 1776853708.10015,
+      "date": "2026-04-22 12:28:28",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 124.7,
+      "nb_objets": 13,
+      "timestamp": 1776853708.60949,
+      "date": "2026-04-22 12:28:28",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 155.8,
+      "nb_objets": 13,
+      "timestamp": 1776853709.11387,
+      "date": "2026-04-22 12:28:29",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 151.7,
+      "nb_objets": 13,
+      "timestamp": 1776853709.61846,
+      "date": "2026-04-22 12:28:29",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 159.9,
+      "nb_objets": 13,
+      "timestamp": 1776853710.12127,
+      "date": "2026-04-22 12:28:30",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 150.5,
+      "nb_objets": 13,
+      "timestamp": 1776853710.62369,
+      "date": "2026-04-22 12:28:30",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 172.1,
+      "nb_objets": 13,
+      "timestamp": 1776853711.1288,
+      "date": "2026-04-22 12:28:31",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 157.6,
+      "nb_objets": 13,
+      "timestamp": 1776853711.63188,
+      "date": "2026-04-22 12:28:31",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 169.4,
+      "nb_objets": 13,
+      "timestamp": 1776853712.13258,
+      "date": "2026-04-22 12:28:32",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 163.1,
+      "nb_objets": 13,
+      "timestamp": 1776853712.63698,
+      "date": "2026-04-22 12:28:32",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 142.9,
+      "nb_objets": 13,
+      "timestamp": 1776853713.13872,
+      "date": "2026-04-22 12:28:33",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 165.1,
+      "nb_objets": 13,
+      "timestamp": 1776853713.64635,
+      "date": "2026-04-22 12:28:33",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 139.8,
+      "nb_objets": 13,
+      "timestamp": 1776853714.15263,
+      "date": "2026-04-22 12:28:34",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 118.1,
+      "nb_objets": 13,
+      "timestamp": 1776853714.65829,
+      "date": "2026-04-22 12:28:34",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 150.1,
+      "nb_objets": 13,
+      "timestamp": 1776853715.16058,
+      "date": "2026-04-22 12:28:35",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 160.2,
+      "nb_objets": 13,
+      "timestamp": 1776853715.66511,
+      "date": "2026-04-22 12:28:35",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 158.7,
+      "nb_objets": 13,
+      "timestamp": 1776853716.16674,
+      "date": "2026-04-22 12:28:36",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 123.3,
+      "nb_objets": 13,
+      "timestamp": 1776853716.67002,
+      "date": "2026-04-22 12:28:36",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 123,
+      "nb_objets": 13,
+      "timestamp": 1776853717.17124,
+      "date": "2026-04-22 12:28:37",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 197.6,
+      "nb_objets": 13,
+      "timestamp": 1776853717.67403,
+      "date": "2026-04-22 12:28:37",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 185.5,
+      "nb_objets": 13,
+      "timestamp": 1776853718.17495,
+      "date": "2026-04-22 12:28:38",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 199.1,
+      "nb_objets": 13,
+      "timestamp": 1776853718.67696,
+      "date": "2026-04-22 12:28:38",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 174.9,
+      "nb_objets": 13,
+      "timestamp": 1776853719.17874,
+      "date": "2026-04-22 12:28:39",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 168.2,
+      "nb_objets": 13,
+      "timestamp": 1776853719.68309,
+      "date": "2026-04-22 12:28:39",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 128.4,
+      "nb_objets": 13,
+      "timestamp": 1776853720.18397,
+      "date": "2026-04-22 12:28:40",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 139.5,
+      "nb_objets": 13,
+      "timestamp": 1776853720.69092,
+      "date": "2026-04-22 12:28:40",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 149.6,
+      "nb_objets": 13,
+      "timestamp": 1776853721.19213,
+      "date": "2026-04-22 12:28:41",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 163.7,
+      "nb_objets": 13,
+      "timestamp": 1776853721.69401,
+      "date": "2026-04-22 12:28:41",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 160.7,
+      "nb_objets": 13,
+      "timestamp": 1776853722.19841,
+      "date": "2026-04-22 12:28:42",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 123.6,
+      "nb_objets": 13,
+      "timestamp": 1776853722.70304,
+      "date": "2026-04-22 12:28:42",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 149.2,
+      "nb_objets": 13,
+      "timestamp": 1776853723.21286,
+      "date": "2026-04-22 12:28:43",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 114.7,
+      "nb_objets": 13,
+      "timestamp": 1776853723.71712,
+      "date": "2026-04-22 12:28:43",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 150.7,
+      "nb_objets": 13,
+      "timestamp": 1776853724.21882,
+      "date": "2026-04-22 12:28:44",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 127.2,
+      "nb_objets": 13,
+      "timestamp": 1776853724.72256,
+      "date": "2026-04-22 12:28:44",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 85.5,
+      "nb_objets": 13,
+      "timestamp": 1776853725.23052,
+      "date": "2026-04-22 12:28:45",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 62.8,
+      "nb_objets": 13,
+      "timestamp": 1776853725.74502,
+      "date": "2026-04-22 12:28:45",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 75.5,
+      "nb_objets": 13,
+      "timestamp": 1776853726.24995,
+      "date": "2026-04-22 12:28:46",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 76,
+      "nb_objets": 13,
+      "timestamp": 1776853726.76543,
+      "date": "2026-04-22 12:28:46",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 104.3,
+      "nb_objets": 13,
+      "timestamp": 1776853727.27276,
+      "date": "2026-04-22 12:28:47",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 80.7,
+      "nb_objets": 13,
+      "timestamp": 1776853727.77495,
+      "date": "2026-04-22 12:28:47",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 86.1,
+      "nb_objets": 13,
+      "timestamp": 1776853728.27823,
+      "date": "2026-04-22 12:28:48",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 125.3,
+      "nb_objets": 13,
+      "timestamp": 1776853728.78696,
+      "date": "2026-04-22 12:28:48",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 59.2,
+      "nb_objets": 13,
+      "timestamp": 1776853729.29712,
+      "date": "2026-04-22 12:28:49",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 101.2,
+      "nb_objets": 13,
+      "timestamp": 1776853729.79977,
+      "date": "2026-04-22 12:28:49",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 139.5,
+      "nb_objets": 13,
+      "timestamp": 1776853730.29964,
+      "date": "2026-04-22 12:28:50",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 140.6,
+      "nb_objets": 13,
+      "timestamp": 1776853730.80246,
+      "date": "2026-04-22 12:28:50",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 85.6,
+      "nb_objets": 13,
+      "timestamp": 1776853731.30614,
+      "date": "2026-04-22 12:28:51",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 159,
+      "nb_objets": 13,
+      "timestamp": 1776853731.8152,
+      "date": "2026-04-22 12:28:51",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 145.1,
+      "nb_objets": 13,
+      "timestamp": 1776853732.32054,
+      "date": "2026-04-22 12:28:52",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 95,
+      "nb_objets": 13,
+      "timestamp": 1776853732.8237,
+      "date": "2026-04-22 12:28:52",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 166.1,
+      "nb_objets": 13,
+      "timestamp": 1776853733.32795,
+      "date": "2026-04-22 12:28:53",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 164,
+      "nb_objets": 13,
+      "timestamp": 1776853733.83251,
+      "date": "2026-04-22 12:28:53",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 178.1,
+      "nb_objets": 13,
+      "timestamp": 1776853734.33692,
+      "date": "2026-04-22 12:28:54",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 185,
+      "nb_objets": 13,
+      "timestamp": 1776853734.83761,
+      "date": "2026-04-22 12:28:54",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 169.6,
+      "nb_objets": 13,
+      "timestamp": 1776853735.3399,
+      "date": "2026-04-22 12:28:55",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 162,
+      "nb_objets": 13,
+      "timestamp": 1776853735.8461,
+      "date": "2026-04-22 12:28:55",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 161.3,
+      "nb_objets": 13,
+      "timestamp": 1776853736.3485,
+      "date": "2026-04-22 12:28:56",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 162,
+      "nb_objets": 13,
+      "timestamp": 1776853736.85145,
+      "date": "2026-04-22 12:28:56",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 169.2,
+      "nb_objets": 13,
+      "timestamp": 1776853737.35662,
+      "date": "2026-04-22 12:28:57",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 132.8,
+      "nb_objets": 13,
+      "timestamp": 1776853737.86037,
+      "date": "2026-04-22 12:28:57",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 123.1,
+      "nb_objets": 13,
+      "timestamp": 1776853738.36674,
+      "date": "2026-04-22 12:28:58",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 132.4,
+      "nb_objets": 13,
+      "timestamp": 1776853738.8724,
+      "date": "2026-04-22 12:28:58",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 132.5,
+      "nb_objets": 13,
+      "timestamp": 1776853739.37463,
+      "date": "2026-04-22 12:28:59",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 181.6,
+      "nb_objets": 13,
+      "timestamp": 1776853739.87323,
+      "date": "2026-04-22 12:28:59",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 165.8,
+      "nb_objets": 13,
+      "timestamp": 1776853740.37706,
+      "date": "2026-04-22 12:29:00",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 169.2,
+      "nb_objets": 13,
+      "timestamp": 1776853740.88297,
+      "date": "2026-04-22 12:29:00",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 188,
+      "nb_objets": 13,
+      "timestamp": 1776853741.38625,
+      "date": "2026-04-22 12:29:01",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 172.2,
+      "nb_objets": 13,
+      "timestamp": 1776853741.89047,
+      "date": "2026-04-22 12:29:01",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 160.2,
+      "nb_objets": 13,
+      "timestamp": 1776853742.39238,
+      "date": "2026-04-22 12:29:02",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 143,
+      "nb_objets": 13,
+      "timestamp": 1776853742.8942,
+      "date": "2026-04-22 12:29:02",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 163.3,
+      "nb_objets": 13,
+      "timestamp": 1776853743.3971,
+      "date": "2026-04-22 12:29:03",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 168.1,
+      "nb_objets": 13,
+      "timestamp": 1776853743.89903,
+      "date": "2026-04-22 12:29:03",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 162.1,
+      "nb_objets": 13,
+      "timestamp": 1776853744.4038,
+      "date": "2026-04-22 12:29:04",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 162.5,
+      "nb_objets": 13,
+      "timestamp": 1776853744.90959,
+      "date": "2026-04-22 12:29:04",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 122.5,
+      "nb_objets": 13,
+      "timestamp": 1776853745.41376,
+      "date": "2026-04-22 12:29:05",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 152.2,
+      "nb_objets": 13,
+      "timestamp": 1776853745.92097,
+      "date": "2026-04-22 12:29:05",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 156.1,
+      "nb_objets": 13,
+      "timestamp": 1776853746.4267,
+      "date": "2026-04-22 12:29:06",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 165.6,
+      "nb_objets": 13,
+      "timestamp": 1776853746.93187,
+      "date": "2026-04-22 12:29:06",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 158.7,
+      "nb_objets": 13,
+      "timestamp": 1776853747.43618,
+      "date": "2026-04-22 12:29:07",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 185.5,
+      "nb_objets": 13,
+      "timestamp": 1776853747.93958,
+      "date": "2026-04-22 12:29:07",
+      "_topic": "jeu/stress/fps"
+    },
+    {
+      "fps": 146.2,
+      "nb_objets": 13,
+      "timestamp": 1776853748.44729,
+      "date": "2026-04-22 12:29:08",
+      "_topic": "jeu/stress/fps"
+    }
+  ]
+}

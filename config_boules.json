@@ -1,0 +1,81 @@
+{
+  "nom": "Stress test — Jeu des boules",
+  "topic_commandes": "unity/commands",
+  "delai_secondes": 0.15,
+  "phases": [
+    {
+      "nom": "Phase 1 — Montée progressive",
+      "description": "Nombre de boules de 2 à 20",
+      "nb_commandes": 50,
+      "delai_secondes": 0.2,
+      "parametres": {
+        "taille": {
+          "valeur": 1.0
+        },
+        "nombre": {
+          "min": 2,
+          "max": 20,
+          "entier": true
+        },
+        "rayon_cercle": {
+          "valeur": 4.0
+        }
+      }
+    },
+    {
+      "nom": "Phase 2 — Boules nombreuses et petites",
+      "description": "20 boules minuscules",
+      "nb_commandes": 30,
+      "delai_secondes": 0.1,
+      "parametres": {
+        "taille": {
+          "valeur": 0.5
+        },
+        "nombre": {
+          "valeur": 20
+        },
+        "rayon_cercle": {
+          "valeur": 8.0
+        }
+      }
+    },
+    {
+      "nom": "Phase 3 — Boules géantes",
+      "description": "2 immenses boules",
+      "nb_commandes": 20,
+      "delai_secondes": 0.3,
+      "parametres": {
+        "taille": {
+          "valeur": 3.0
+        },
+        "nombre": {
+          "valeur": 2
+        },
+        "rayon_cercle": {
+          "valeur": 2.0
+        }
+      }
+    },
+    {
+      "nom": "Phase 4 — Chaos complet",
+      "description": "Tout change aléatoirement",
+      "nb_commandes": 100,
+      "delai_secondes": 0.05,
+      "parametres": {
+        "taille": {
+          "min": 0.5,
+          "max": 3.0
+        },
+        "nombre": {
+          "min": 2,
+          "max": 20,
+          "entier": true
+        },
+        "rayon_cercle": {
+          "min": 1.0,
+          "max": 10.0
+        }
+      }
+    }
+  ]
+}
