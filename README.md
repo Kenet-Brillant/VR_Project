@@ -1,510 +1,385 @@
-# VR_Project — Système Unity × MQTT × Python
+# Intégrer MQTT dans votre projet Unity
 
-> **Auteur :** Brillant Kenet FOUANA — ESTIA 2026  
-> **Dépôt :** https://github.com/Kenet-Brillant/VR_Project
-
----
-
-## 📋 Table des matières
-
-1. [Présentation du projet](#présentation-du-projet)
-2. [Architecture globale](#architecture-globale)
-3. [Prérequis](#prérequis)
-4. [Structure des dossiers](#structure-des-dossiers)
-5. [Installation](#installation)
-6. [Lancer le système complet](#lancer-le-système-complet)
-7. [Jeu des boules](#jeu-des-boules)
-8. [Jeu d'obstacles](#jeu-dobstacles)
-9. [Logger Python](#logger-python)
-10. [Controller Gradio](#controller-gradio)
-11. [Main Controller (génération automatique)](#main-controller)
-12. [Stress Test](#stress-test)
-13. [Utiliser les fichiers MQTT sur un autre projet Unity](#utiliser-les-fichiers-mqtt-sur-un-autre-projet-unity)
-14. [Résultats obtenus](#résultats-obtenus)
-
----
-
-## Présentation du projet
-
-Ce projet connecte des jeux développés sous **Unity** à une infrastructure de communication **MQTT**, afin de :
-
-- **Logger** (enregistrer) toutes les données de jeu en temps réel dans des fichiers JSON
+Ce guide vous explique comment connecter votre jeu Unity à une infrastructure MQTT pour :
+- **Enregistrer** automatiquement tout ce qui se passe dans le jeu (clics, scores, événements...)
 - **Contrôler** les paramètres du jeu à distance depuis une interface web
-- **Monitorer** les performances (FPS) pendant des tests de charge
 
-Deux jeux Unity ont été connectés :
-- **Jeu des boules** : des sphères apparaissent en cercle, le joueur doit toutes les cliquer
-- **Jeu d'obstacles** : le joueur esquive des obstacles, un score est calculé
+> 💡 Vous n'avez pas besoin de comprendre comment MQTT fonctionne en interne. Suivez simplement les étapes dans l'ordre.
 
 ---
 
-## Architecture globale
+## Ce dont vous avez besoin
 
-```
-┌─────────────────┐        ┌──────────────────┐        ┌────────────────────┐
-│   App Unity     │──────▶ │   Broker MQTT    │──────▶ │   Logger Python    │
-│  (Jeu C#)       │        │ devweb.estia.fr  │        │   logger.py        │
-│                 │ ◀───── │    port 1883     │ ◀───── │   logs/*.json      │
-└─────────────────┘        └──────────────────┘        └────────────────────┘
-                                    ▲
-                                    │
-                           ┌────────────────────┐
-                           │  Controller Python │
-                           │  (Interface Gradio)│
-                           │  controller.py     │
-                           └────────────────────┘
-```
-
-**Flux événements (Unity → Broker → Logger) :**
-Unity publie chaque action du joueur sur un topic MQTT. Le Logger Python s'abonne et sauvegarde tout.
-
-**Flux commandes (Controller → Broker → Unity) :**
-L'interface web Gradio publie des commandes sur un topic. Unity les reçoit et modifie le jeu en temps réel.
-
-**Topics MQTT :**
-
-| Jeu | Topic événements | Topic commandes |
-|-----|-----------------|-----------------|
-| Boules | `jeu/boules/evenement` | `unity/commands` |
-| Obstacles | `jeu/obstacle/evenement` | `unity/obstacle/commands` |
-| Config | `jeu/config` | — |
-| Stress | `jeu/stress/fps` | — |
-
----
-
-## Prérequis
-
-### Logiciels
-- **Unity 6** (version 6000.0.63f1 ou supérieure)
-- **Python 3.8+**
-- **Git**
-
-### Bibliothèques Python
+### Installer les bibliothèques Python
+Ouvrez un terminal et tapez :
 ```bash
 pip install paho-mqtt gradio
 ```
 
-### Accès broker MQTT
-- **Host :** `devweb.estia.fr`
-- **Port :** `1883`
-- **Username :** `estia`
-- **Password :** `*aZ9#r8X7`
-
-> ⚠️ Le broker doit être accessible depuis votre réseau. Testez avec un client MQTT si nécessaire.
-
----
-
-## Structure des dossiers
-
+### Informations du broker MQTT
+Le broker est le "serveur intermédiaire" par lequel tous les messages transitent.
 ```
-VR_Project/
-│
-├── boules/                     ← Projet Unity jeu des boules
-│   └── Assets/script/
-│       ├── MQTTgene/           ← Fichiers MQTT génériques
-│       │   ├── MQTTClient.cs
-│       │   ├── MQTTPublisher.cs
-│       │   ├── MQTTReceiver.cs
-│       │   └── MQTTController.cs
-│       ├── CircleManager.cs    ← Logique du jeu des boules
-│       └── SphereClick.cs      ← Détection de clic
-│
-├── obstacles/                  ← Projet Unity jeu d'obstacles
-│   └── Assets/script/
-│       ├── MQTTgene/           ← Mêmes fichiers MQTT génériques
-│       ├── GameManager.cs      ← Score, Game Over, MQTT
-│       ├── PlayerController.cs ← Déplacements joueur
-│       ├── ObstacleSpawner.cs  ← Spawn des obstacles
-│       └── ObstacleMovement.cs ← Déplacement obstacles
-│
-├── stress/
-│   └── UnityStressReporter.cs  ← Script Unity pour mesurer les FPS
-│
-├── logs/                       ← Fichiers JSON générés par le logger
-│   ├── joueur_1.json
-│   ├── joueur_1_2.json
-│   └── ...
-│
-├── logger.py                   ← Logger Python générique (v2)
-├── main_controller.py          ← Génère automatiquement le controller
-├── unity_stress_test.py        ← Script de stress test
-├── controller_boules.py        ← Controller Gradio (généré automatiquement)
-├── config_boules.json          ← Config du stress test pour les boules
-└── config_obstacles.json       ← Config du stress test pour les obstacles
+Host     : devweb.estia.fr
+Port     : 1883
+Username : estia
+Password : *aZ9#r8X7
 ```
 
 ---
 
-## Installation
+## Étape 1 — Copier les fichiers C# dans votre projet Unity
 
-### 1. Cloner le dépôt
+Dans ce dépôt, vous trouverez un dossier `MQTTgene/`. Copiez-le dans `Assets/script/` de votre projet Unity.
 
-```bash
-git clone https://github.com/Kenet-Brillant/VR_Project.git
-cd VR_Project
+```
+Assets/script/MQTTgene/
+├── MQTTClient.cs       ← le moteur qui gère la connexion réseau. Ne jamais modifier.
+├── MQTTPublisher.cs    ← sert à ENVOYER des messages depuis Unity vers le broker
+├── MQTTReceiver.cs     ← sert à RECEVOIR des commandes depuis le broker vers Unity
+└── MQTTController.cs   ← combine les deux (optionnel, utile hors Unity)
 ```
 
-### 2. Installer les dépendances Python
-
-```bash
-pip install paho-mqtt gradio
-```
-
-### 3. Ouvrir les projets Unity
-
-- Ouvrir **Unity Hub**
-- **Add project from disk**
-- Sélectionner le dossier `boules/` pour le jeu des boules
-- Sélectionner le dossier `obstacles/` pour le jeu d'obstacles
-
-> Les fichiers MQTT dans `Assets/script/MQTTgene/` sont déjà en place — aucune installation de package supplémentaire n'est nécessaire.
+> ✅ Ces fichiers n'ont aucune dépendance externe. Aucun package Unity à installer.  
+> ✅ Compatibles avec toutes les versions de Unity.
 
 ---
 
-## Lancer le système complet
+## Étape 2 — Connecter MQTT à votre script principal
 
-### Ordre de démarrage obligatoire
+### Qu'est-ce que le "script principal" ?
+
+C'est le script C# qui gère la logique centrale de votre jeu. Dans le jeu des boules c'est `CircleManager.cs`, dans le jeu d'obstacles c'est `GameManager.cs`. Dans votre jeu, ce sera le script qui tourne depuis le début de la partie — peu importe son nom.
+
+### Ce que vous devez ajouter dans ce script
+
+Vous allez modifier **quatre endroits** dans votre script existant.
+
+---
+
+### 2a — Ajouter une Queue en haut de la classe
+
+```csharp
+private readonly Queue<System.Action> _queue = new Queue<System.Action>();
+```
+
+**Pourquoi cette ligne ?**  
+MQTT reçoit les messages sur un "thread secondaire" (un processus parallèle). Unity n'autorise pas à modifier des objets du jeu depuis un thread secondaire — sinon le jeu plante. La Queue sert de "boîte intermédiaire" : les messages y arrivent, et Unity les traite au bon moment dans `Update()`.
+
+**Copiez cette ligne telle quelle, sans la modifier.**
+
+---
+
+### 2b — Démarrer MQTT dans le Start()
+
+Ajoutez ces lignes dans le `Start()` de votre script. C'est ici que vous configurez la connexion.
+
+Dans le jeu des boules, voici exactement ce qu'on a écrit :
+
+```csharp
+void Start()
+{
+    // ────────────────────────────────────────────────────────────────────
+    // PUBLISHER — Unity envoie des messages vers le broker
+    // ────────────────────────────────────────────────────────────────────
+    MQTTPublisher.Instance.UserId = "joueur_1";
+    //  ^ L'identifiant du joueur. Ce nom apparaîtra dans les fichiers de log.
+    //    Changez-le si vous souhaitez identifier plusieurs joueurs.
+
+    MQTTPublisher.Instance.Topic  = "jeu/boules/evenement";
+    //  ^ L'adresse sur laquelle Unity publie ses messages.
+    //    Pour votre jeu, remplacez "boules" par le nom de votre jeu.
+    //    Exemple pour le jeu d'obstacles : "jeu/obstacle/evenement"
+
+    MQTTPublisher.Instance.Logger = msg => Debug.Log(msg);
+    //  ^ Affiche les messages MQTT dans la Console Unity. Utile pour vérifier
+    //    que les messages partent bien.
+
+    MQTTPublisher.Instance.Start();
+    //  ^ Lance la connexion au broker. À appeler en dernier pour le Publisher.
+
+
+    // ────────────────────────────────────────────────────────────────────
+    // RECEIVER — Unity reçoit des commandes depuis le controller web
+    // ────────────────────────────────────────────────────────────────────
+    MQTTReceiver.Instance.Topic  = "unity/commands";
+    //  ^ L'adresse sur laquelle Unity écoute les commandes du controller.
+    //    Pour votre jeu, adaptez ce topic.
+    //    Exemple pour le jeu d'obstacles : "unity/obstacle/commands"
+
+    MQTTReceiver.Instance.Logger = msg => Debug.Log(msg);
+    MQTTReceiver.Instance.Start();
+    MQTTReceiver.OnCommandReceived += OnMqttCommand;
+    //  ^ Quand une commande arrive, Unity appelle automatiquement
+    //    la fonction OnMqttCommand() que vous allez créer à l'étape 2d.
+
+
+    // ────────────────────────────────────────────────────────────────────
+    // CONFIG — Envoie la description du jeu au Main Controller
+    // ────────────────────────────────────────────────────────────────────
+    EnvoyerConfig();
+    //  ^ Envoie au Main Controller la liste des paramètres que votre jeu
+    //    accepte. Le Main Controller génère ensuite automatiquement
+    //    l'interface web avec les bons sliders. Voir Étape 4.
+}
+```
+
+---
+
+### 2c — Arrêter MQTT proprement dans OnDestroy()
+
+Ajoutez cette fonction dans votre script. Elle s'exécute automatiquement quand Unity ferme la scène :
+
+```csharp
+void OnDestroy()
+{
+    MQTTReceiver.OnCommandReceived -= OnMqttCommand;
+    MQTTReceiver.Instance.Stop();
+    MQTTPublisher.Instance.Stop();
+}
+```
+
+**Pourquoi ?**  
+Sans cette fonction, la connexion MQTT reste ouverte en arrière-plan après la fermeture du jeu, ce qui peut causer des comportements inattendus si vous relancez Unity.
+
+---
+
+### 2d — Traiter les commandes reçues
+
+Ajoutez ces deux fonctions dans votre script :
+
+```csharp
+// Cette fonction tourne à chaque frame. Elle vide la Queue et applique
+// les changements dans Unity. Copiez-la telle quelle sans la modifier.
+void Update()
+{
+    while (_queue.Count > 0)
+        _queue.Dequeue()?.Invoke();
+}
+
+
+// Cette fonction est appelée automatiquement quand le Controller
+// envoie une commande vers Unity.
+// C'est ICI que vous adaptez le code à votre jeu.
+void OnMqttCommand(Dictionary<string, string> data)
+{
+    _queue.Enqueue(() =>
+    {
+        // Exemple tiré du jeu des boules :
+        // Le controller envoie "taille", "nombre" et "rayon_cercle"
+        // Unity les reçoit ici et met à jour le jeu.
+
+        if (data.ContainsKey("taille"))
+        {
+            float taille = float.Parse(data["taille"],
+                System.Globalization.CultureInfo.InvariantCulture);
+            // Applique la nouvelle taille des boules
+            sphereRadius = taille;
+        }
+
+        if (data.ContainsKey("nombre"))
+        {
+            int nombre = (int)float.Parse(data["nombre"],
+                System.Globalization.CultureInfo.InvariantCulture);
+            // Met à jour le nombre de boules dans le cercle
+            numberOfSpheres = nombre;
+        }
+
+        if (data.ContainsKey("rayon_cercle"))
+        {
+            float rayon = float.Parse(data["rayon_cercle"],
+                System.Globalization.CultureInfo.InvariantCulture);
+            forcedRadius = rayon;
+        }
+
+        // Autre exemple tiré du jeu d'obstacles :
+        // if (data.ContainsKey("vitesse"))
+        //     obstacleSpeed = float.Parse(data["vitesse"], ...);
+        //
+        // if (data.ContainsKey("intervalle"))
+        //     spawnInterval = float.Parse(data["intervalle"], ...);
+
+        // Une fois les paramètres mis à jour, on régénère le jeu
+        Regenerate();
+    });
+}
+```
+
+**En résumé :** dans `OnMqttCommand()`, listez tous les paramètres que votre jeu peut recevoir depuis le controller web, et décrivez ce qu'il faut faire quand chacun arrive. Adaptez les noms des clés (`taille`, `nombre`, `vitesse`...) aux paramètres réels de votre jeu.
+
+---
+
+## Étape 3 — Publier des événements depuis votre jeu
+
+Un "événement" c'est n'importe quoi qui se passe dans votre jeu et que vous souhaitez enregistrer.
+
+Pour publier un événement, appelez cette ligne depuis **n'importe quel script** de votre jeu :
+
+```csharp
+// Exemple 1 — tiré du jeu des boules
+// Publié depuis SphereClick.cs quand le joueur clique sur une boule
+MQTTPublisher.Instance.Publish("boule_cliquee", new Dictionary<string, object>
+{
+    { "boule_id", bouleId }
+});
+
+// Exemple 2 — tiré du jeu des boules
+// Publié depuis CircleManager.cs quand toutes les boules sont cliquées
+MQTTPublisher.Instance.Publish("round_termine", new Dictionary<string, object>
+{
+    { "nb_boules",       numberOfSpheres },
+    { "nouveau_rayon",   circleRadius    },
+    { "duree_secondes",  duree           }
+});
+
+// Exemple 3 — tiré du jeu d'obstacles
+// Publié depuis GameManager.cs quand c'est Game Over
+MQTTPublisher.Instance.Publish("game_over", new Dictionary<string, object>
+{
+    { "score_final", score }
+});
+
+// Exemple 4 — tiré du jeu d'obstacles
+// Publié depuis PlayerController.cs quand le joueur touche un obstacle
+MQTTPublisher.Instance.Publish("collision", new Dictionary<string, object>
+{
+    { "obstacle_tag", collision.gameObject.tag }
+});
+```
+
+**Ce que le broker reçoit concrètement pour l'exemple 2 :**
+```json
+{
+    "user":           "joueur_1",
+    "evenement":      "round_termine",
+    "timestamp":      1776932278.77,
+    "nb_boules":      8,
+    "nouveau_rayon":  3.5,
+    "duree_secondes": 12.4
+}
+```
+
+> 💡 Le `user` et le `timestamp` sont ajoutés **automatiquement** par `MQTTPublisher`. Vous n'avez pas à les écrire.
+
+---
+
+## Étape 4 — Décrire les paramètres de votre jeu
+
+Cette fonction permet au Main Controller de générer automatiquement l'interface web avec les bons sliders pour **votre** jeu. Ajoutez-la dans votre script et appelez-la à la fin du `Start()`.
+
+**Exemple tiré du jeu des boules :**
+
+```csharp
+void EnvoyerConfig()
+{
+    // Décrivez ici les paramètres que votre jeu accepte depuis le controller.
+    // Chaque paramètre deviendra un slider dans l'interface web.
+    //
+    // Pour chaque paramètre, précisez :
+    //   "nom"     : le nom de la clé que vous lisez dans OnMqttCommand()
+    //   "label"   : le texte affiché dans l'interface web
+    //   "type"    : "slider" pour un nombre
+    //   "min/max" : les valeurs minimum et maximum
+    //   "default" : la valeur par défaut au démarrage
+    //   "step"    : le pas du slider (0.1, 0.5, 1...)
+
+    string json =
+        "{\"jeu\": \"boules\"," +
+        "\"topic_events\": \"jeu/boules/evenement\"," +
+        "\"topic_commands\": \"unity/commands\"," +
+        "\"commandes\": [" +
+
+            "{\"nom\": \"taille\"," +
+            " \"label\": \"Taille des boules\"," +
+            " \"type\": \"slider\"," +
+            " \"min\": 0.5, \"max\": 3.0, \"default\": 1.0, \"step\": 0.1}," +
+
+            "{\"nom\": \"nombre\"," +
+            " \"label\": \"Nombre de boules\"," +
+            " \"type\": \"slider\"," +
+            " \"min\": 2, \"max\": 20, \"default\": 8, \"step\": 1}," +
+
+            "{\"nom\": \"rayon_cercle\"," +
+            " \"label\": \"Rayon du cercle\"," +
+            " \"type\": \"slider\"," +
+            " \"min\": 1.0, \"max\": 10.0, \"default\": 3.0, \"step\": 0.1}" +
+
+        "]}";
+
+    MQTTPublisher.Instance.PublishRaw("jeu/config", json);
+    Debug.Log("Config envoyée au Main Controller !");
+}
+```
+
+**Exemple tiré du jeu d'obstacles (pour comparaison) :**
+
+```csharp
+// Les paramètres changent, mais la structure reste exactement la même.
+"{\"nom\": \"vitesse\",    \"label\": \"Vitesse des obstacles\", ...}," +
+"{\"nom\": \"intervalle\", \"label\": \"Intervalle de spawn\",   ...}," +
+"{\"nom\": \"points\",     \"label\": \"Points par esquive\",    ...}"
+```
+
+> 💡 Ajoutez autant de paramètres que vous voulez. Chacun deviendra un slider dans l'interface web.
+
+---
+
+## Étape 5 — Lancer le système
+
+### Ordre de démarrage — à respecter impérativement
 
 ```
-1. python logger.py          (Terminal 1)
-2. python main_controller.py (Terminal 2)
-3. Lancer Unity ▶️
-4. Cliquer "Lancer le Controller du jeu" dans l'interface Main Controller
+1. Terminal 1 :  python logger.py
+2. Terminal 2 :  python main_controller.py
+3. Unity       :  ▶️ Play
 ```
 
-### Détail étape par étape
+Ne lancez pas Unity en premier. Le logger et le main controller doivent être connectés au broker avant que Unity démarre et envoie sa config.
 
-**Terminal 1 — Logger :**
+### Terminal 1 — Lancer le logger
+
 ```bash
-cd VR_Project
 python logger.py
 ```
+
 Sortie attendue :
 ```
 ✅ Connecté au broker MQTT !
 📡 En écoute sur : #
 ```
 
-**Terminal 2 — Main Controller :**
+Dès que Unity publie un événement, le logger le reçoit et le sauvegarde automatiquement dans `logs/joueur_1.json`. Chaque fichier contient au maximum 100 événements — un nouveau fichier est créé ensuite (`joueur_1_2.json`, etc.).
+
+Pour ne logger que votre jeu :
+```bash
+python logger.py --topic "jeu/boules/#"
+# ou
+python logger.py --topic "jeu/obstacle/#"
+```
+
+### Terminal 2 — Lancer le Main Controller
+
 ```bash
 python main_controller.py
 ```
-Sortie attendue :
-```
-✅ Connecté au broker MQTT !
-🌐 Interface disponible sur : http://localhost:7860
-```
-Ouvrir http://localhost:7860 dans un navigateur.
 
-**Unity :**
-- Ouvrir le projet souhaité (boules ou obstacles)
-- Appuyer sur **▶️ Play**
-- Unity envoie automatiquement sa configuration au Main Controller
-- Dans l'interface web, cliquer **"Lancer le Controller du jeu"**
-- Le controller spécifique est disponible sur http://localhost:7861
+Ouvrez **http://localhost:7860** dans votre navigateur.
+
+Quand Unity démarre et envoie sa config, le Main Controller génère automatiquement le controller de votre jeu. Cliquez sur **"Lancer le Controller du jeu"** — l'interface avec vos sliders est disponible sur **http://localhost:7861**.
 
 ---
 
-## Jeu des boules
+## Résumé — Ce qui change pour chaque nouveau jeu
 
-### Principe
-Des sphères apparaissent disposées en cercle. Le joueur doit cliquer sur chacune d'elles (elles deviennent vertes). Quand toutes sont cliquées, un nouveau cercle apparaît.
+Vous n'avez que **4 choses à adapter** — tout le reste est identique :
 
-### Paramètres contrôlables via le Controller
-| Paramètre | Description | Plage |
-|-----------|-------------|-------|
-| `taille` | Taille des boules | 0.5 à 3.0 |
-| `nombre` | Nombre de boules dans le cercle | 2 à 20 |
-| `rayon_cercle` | Rayon du cercle | 1.0 à 10.0 |
+| Ce qu'on change | Où | Exemple boules | Exemple obstacles |
+|---|---|---|---|
+| Topic Publisher | `Start()` | `"jeu/boules/evenement"` | `"jeu/obstacle/evenement"` |
+| Topic Receiver | `Start()` | `"unity/commands"` | `"unity/obstacle/commands"` |
+| Paramètres reçus | `OnMqttCommand()` | `taille`, `nombre`, `rayon_cercle` | `vitesse`, `intervalle`, `points` |
+| Config envoyée | `EnvoyerConfig()` | 3 sliders boules | 3 sliders obstacles |
 
-### Événements publiés sur MQTT
-| Événement | Description |
-|-----------|-------------|
-| `boule_cliquee` | Une boule a été cliquée (avec `boule_id`) |
-| `round_termine` | Toutes les boules ont été cliquées (avec `nb_boules`, `duree_secondes`) |
-
-### Configuration Unity (CircleManager.cs)
-```csharp
-MQTTPublisher.Instance.UserId = "joueur_1";           // Identifiant du joueur
-MQTTPublisher.Instance.Topic  = "jeu/boules/evenement"; // Topic de publication
-MQTTReceiver.Instance.Topic   = "unity/commands";       // Topic d'écoute
-```
-
----
-
-## Jeu d'obstacles
-
-### Principe
-Le joueur se déplace en X/Z pour esquiver des obstacles qui arrivent. En cas de collision, c'est Game Over. Le score augmente à chaque obstacle évité.
-
-### Paramètres contrôlables via le Controller
-| Paramètre | Description | Plage |
-|-----------|-------------|-------|
-| `vitesse` | Vitesse des obstacles | 1.0 à 20.0 |
-| `intervalle` | Temps entre deux spawns (secondes) | 0.2 à 5.0 |
-| `points` | Points par obstacle évité | 1 à 100 |
-
-### Événements publiés sur MQTT
-| Événement | Description |
-|-----------|-------------|
-| `collision` | Le joueur a touché un obstacle |
-| `game_over` | Fin de partie (avec `score_final`) |
-| `score_update` | Mise à jour du score (avec `score`) |
-
-### Configuration Unity (GameManager.cs)
-```csharp
-MQTTPublisher.instance.UserId = "joueur_1";
-MQTTPublisher.instance.Topic  = "jeu/obstacle/evenement";
-MQTTReceiver.Instance.Topic   = "unity/obstacle/commands";
-```
-
----
-
-## Logger Python
-
-### Description
-Le logger `logger.py` est **générique** : il sauvegarde tous les événements MQTT sans connaître le jeu. Il écoute par défaut sur `#` (tous les topics).
-
-### Utilisation
-```bash
-# Écouter tous les topics (par défaut)
-python logger.py
-
-# Écouter uniquement le jeu des boules
-python logger.py --topic "jeu/boules/#"
-
-# Écouter uniquement le jeu d'obstacles
-python logger.py --topic "jeu/obstacle/#"
-
-# Mode simulation (sans Unity)
-python logger.py --simulate
-```
-
-### Format des fichiers de log
-Les événements sont sauvegardés dans `logs/<user>.json` :
-```json
-{
-  "user": "joueur_1",
-  "fichier": 1,
-  "events": [
-    {
-      "user": "joueur_1",
-      "evenement": "boule_cliquee",
-      "timestamp": 1776932278.77,
-      "boule_id": 3,
-      "date": "2026-04-23 10:17:58",
-      "_topic": "jeu/boules/evenement"
-    }
-  ]
-}
-```
-
-> Chaque fichier contient au maximum **100 événements**. Un nouveau fichier est créé automatiquement (`joueur_1_2.json`, `joueur_1_3.json`...).
-
----
-
-## Controller Gradio
-
-### Description
-Interface web Python/Gradio pour contrôler le jeu en temps réel.
-
-### Utilisation manuelle (sans Main Controller)
-```bash
-python controller_boules.py
-```
-Puis ouvrir http://localhost:7861
-
-### Fonctionnalités
-- Sliders pour modifier les paramètres du jeu en direct
-- Bouton **"Envoyer les paramètres"** pour appliquer les changements
-- Section **"Messages reçus de Unity"** pour voir l'activité du jeu
-- Bouton **"Rafraîchir"** pour actualiser les messages
-
----
-
-## Main Controller
-
-### Description
-`main_controller.py` génère **automatiquement** le controller Gradio adapté au jeu qui vient de démarrer. Plus besoin de coder un controller manuellement pour chaque nouveau jeu.
-
-### Fonctionnement
-1. Unity démarre → envoie sa configuration JSON sur `jeu/config`
-2. Main Controller reçoit la config → génère `controller_<jeu>.py`
-3. L'interface affiche un bouton **"Lancer le Controller du jeu"**
-4. Un clic → le controller généré démarre sur le port 7861
-
-### Interface web (port 7860)
-- **Statut** : connexion au broker, config reçue
-- **Bouton "Rafraîchir le statut"** : vérifie si Unity a envoyé sa config
-- **Bouton "Lancer le Controller du jeu"** : démarre le controller généré
-
----
-
-## Stress Test
-
-### Description
-`unity_stress_test.py` envoie une série de commandes MQTT en rafale pour tester la robustesse du système sous charge. Il mesure les FPS de Unity en temps réel pendant le test.
-
-### Prérequis Unity
-Ajouter `UnityStressReporter.cs` (dans le dossier `stress/`) dans la scène Unity :
-1. Copier `stress/UnityStressReporter.cs` dans `Assets/script/` du projet
-2. Créer un **GameObject vide** → nommer `StressReporter`
-3. Attacher le script `UnityStressReporter` au GameObject
-4. Lancer le jeu ▶️
-
-### Lancer le stress test
-
-**Jeu des boules :**
-```bash
-python unity_stress_test.py --config config_boules.json
-```
-
-**Jeu d'obstacles :**
-```bash
-python unity_stress_test.py --config config_obstacles.json
-```
-
-### Résultats obtenus
-
-**Jeu des boules :**
-```
-Commandes OK : 200 | Ko : 0 | Durée : 24.2s
-FPS : min=113  max=200  moy=150
-Chutes < 30 FPS : 0 fois (0%)
-✅ VERDICT : 60+ FPS tout le long — Unity tient parfaitement
-```
-
-**Jeu d'obstacles :**
-```
-Commandes OK : 200 | Ko : 0 | Durée : 21.8s
-FPS : min=61.1  max=161.7  moy=106.5
-Chutes < 30 FPS : 0 fois (0%)
-✅ VERDICT : 60+ FPS tout le long — Unity tient parfaitement
-```
-
-### Personnaliser le stress test
-Modifier `config_obstacles.json` :
-```json
-{
-  "nom": "Jeu d'obstacles",
-  "topic_commands": "unity/obstacle/commands",
-  "topic_stress": "jeu/stress/fps",
-  "phases": [
-    {
-      "nom": "Vitesse progressive",
-      "commandes": {"vitesse": 3.0, "intervalle": 2.0, "points": 10},
-      "nb_commandes": 20,
-      "intervalle_secondes": 0.5
-    }
-  ]
-}
-```
-
----
-
-## Utiliser les fichiers MQTT sur un autre projet Unity
-
-Les 4 fichiers dans `MQTTgene/` sont **100% génériques** et fonctionnent avec n'importe quel projet Unity, sans aucune dépendance externe.
-
-### Étapes
-
-**1. Copier le dossier `MQTTgene/` dans `Assets/script/` du nouveau projet**
-
-**2. Dans votre script principal, ajouter ces lignes dans `Start()` :**
-
-```csharp
-using System.Collections.Generic;
-using UnityEngine;
-
-public class MonGameManager : MonoBehaviour
-{
-    void Start()
-    {
-        // ── Configurer le Publisher ──────────────────────────────
-        MQTTPublisher.Instance.UserId = "joueur_1";
-        MQTTPublisher.Instance.Topic  = "jeu/MON_JEU/evenement"; // ← changer
-        MQTTPublisher.Instance.Logger = msg => Debug.Log(msg);
-        MQTTPublisher.Instance.Start();
-
-        // ── Configurer le Receiver ───────────────────────────────
-        MQTTReceiver.Instance.Topic  = "unity/MON_JEU/commands"; // ← changer
-        MQTTReceiver.Instance.Logger = msg => Debug.Log(msg);
-        MQTTReceiver.Instance.Start();
-        MQTTReceiver.OnCommandReceived += OnMqttCommand;
-    }
-
-    void OnDestroy()
-    {
-        MQTTReceiver.OnCommandReceived -= OnMqttCommand;
-        MQTTReceiver.Instance.Stop();
-        MQTTPublisher.Instance.Stop();
-    }
-
-    // ── Thread-safe : dispatch vers le thread principal Unity ────
-    private readonly Queue<System.Action> _queue = new Queue<System.Action>();
-
-    void Update()
-    {
-        while (_queue.Count > 0) _queue.Dequeue()?.Invoke();
-    }
-
-    void OnMqttCommand(System.Collections.Generic.Dictionary<string, string> data)
-    {
-        _queue.Enqueue(() =>
-        {
-            // Traiter les commandes reçues
-            if (data.ContainsKey("ma_commande"))
-                Debug.Log("Commande reçue : " + data["ma_commande"]);
-        });
-    }
-}
-```
-
-**3. Publier des événements depuis n'importe quel script :**
-```csharp
-MQTTPublisher.Instance.Publish("mon_evenement", new Dictionary<string, object>
-{
-    { "valeur", 42 },
-    { "info",   "exemple" }
-});
-// → publie automatiquement avec user + timestamp
-```
-
-**4. Lancer le logger pour ce nouveau jeu :**
-```bash
-python logger.py --topic "jeu/MON_JEU/#"
-```
-
-> **Seules 2 lignes changent d'un jeu à l'autre** : les deux topics MQTT.
-
----
-
-## Résultats obtenus
-
-| Métrique | Valeur |
-|----------|--------|
-| Stress test broker | 26 153 msg/s, 0 perte sur 1000 messages |
-| FPS jeu des boules (stress) | min 113 — max 200 — moy 150 |
-| FPS jeu d'obstacles (stress) | min 61 — max 161 — moy 106 |
-| Chutes sous 30 FPS | 0 fois (0%) |
-| Fichiers MQTT génériques | 4 fichiers C# réutilisables |
-| Jeux connectés | 2 (boules + obstacles) |
-
----
-
-## Fichiers clés
-
-| Fichier | Rôle | Générique ? |
-|---------|------|-------------|
-| `MQTTClient.cs` | Moteur TCP pur, protocole MQTT 3.1.1 | ✅ Ne change jamais |
-| `MQTTPublisher.cs` | Publie les événements Unity | ✅ Changer UserId + Topic |
-| `MQTTReceiver.cs` | Reçoit les commandes | ✅ Changer Topic |
-| `MQTTController.cs` | Publie ET reçoit (C# pur) | ✅ Changer les topics |
-| `logger.py` | Enregistre tous les événements | ✅ Changer `--topic` |
-| `main_controller.py` | Génère le controller automatiquement | ✅ Ne change jamais |
-| `unity_stress_test.py` | Test de charge Unity | ✅ Changer le config JSON |
-| `CircleManager.cs` | Logique jeu des boules | ❌ Spécifique boules |
-| `GameManager.cs` | Logique jeu d'obstacles | ❌ Spécifique obstacles |
+> Les fichiers `MQTTClient.cs`, `MQTTPublisher.cs`, `MQTTReceiver.cs`, `logger.py` et `main_controller.py` **ne changent jamais**, quel que soit le jeu.
 
 ---
 
