@@ -15,18 +15,6 @@ Ouvrez un terminal et tapez :
 ```bash
 pip install paho-mqtt gradio
 ```
-
-### Informations du broker MQTT
-Le broker est le "serveur intermédiaire" par lequel tous les messages transitent.
-```
-Host     : devweb.estia.fr
-Port     : 1883
-Username : estia
-Password : *aZ9#r8X7
-```
-
----
-
 ## Étape 1 — Copier les fichiers C# dans votre projet Unity
 
 Dans ce dépôt, vous trouverez un dossier `MQTTgene/`. Copiez-le dans `Assets/script/` de votre projet Unity.
