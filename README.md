@@ -17,13 +17,7 @@ pip install paho-mqtt gradio
 ```
 
 ### Informations du broker MQTT
-Le broker est le "serveur intermédiaire" par lequel tous les messages transitent.
-```
-Host     : devweb.estia.fr
-Port     : 1883
-Username : estia
-Password : *aZ9#r8X7
-```
+Le broker est le "serveur intermédiaire" par lequel tous les messages transitent. Contactez l'administrateur du projet pour obtenir les informations de connexion (host, port, username, password).
 
 ---
 
