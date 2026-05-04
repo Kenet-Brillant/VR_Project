@@ -261,33 +261,76 @@ MQTTPublisher.Instance.Publish("collision", new Dictionary<string, object>
 
 ## Étape 4 — Décrire les paramètres de votre jeu (EnvoyerConfig)
 
-Cette fonction permet au Main Controller de générer automatiquement l'interface web avec les bons sliders pour **votre** jeu. Ajoutez-la dans votre script et appelez-la à la fin du `Start()`.
+Cette fonction permet au Main Controller de générer automatiquement l'interface web avec les bons sliders pour **votre** jeu.
 
 > ⚠️ **Le système ne supporte que des sliders numériques.** Il n'est pas possible de générer des listes déroulantes, des cases à cocher ou d'autres types de contrôles. Chaque paramètre doit obligatoirement avoir une valeur minimale, une valeur maximale et un pas numérique.
 
+### Où placer cette fonction ?
+
+`EnvoyerConfig()` doit être placée **dans la même classe** que votre `Start()`, au même niveau que `Update()` et `OnDestroy()`. Elle ne va pas dans un nouveau fichier — elle s'ajoute dans votre script principal existant.
+
+```csharp
+public class MonGameManager : MonoBehaviour
+{
+    void Start()
+    {
+        // ...
+        EnvoyerConfig(); // ← appelée ici dans le Start()
+    }
+
+    void OnDestroy() { ... }
+
+    void Update() { ... }
+
+    void OnMqttCommand(...) { ... }
+
+    void EnvoyerConfig()    // ← définie ici, dans la même classe
+    {
+        // ... voir template ci-dessous
+    }
+}
+```
+
+### Template à copier-coller
+
+**Copiez cette fonction telle quelle dans votre script.** Modifiez uniquement les lignes indiquées par `// ← MODIFIER`. Ne touchez pas aux noms des clés (`"jeu"`, `"commandes"`, `"nom"`, `"type"`, `"default"`, etc.) — ce sont des noms fixes reconnus par le système.
+
+```csharp
+void EnvoyerConfig()
+{
+    string json =
+        "{\"jeu\": \"MON_JEU\"," +                          // ← MODIFIER : nom de votre jeu
+        "\"topic_events\": \"jeu/MON_JEU/evenement\"," +    // ← MODIFIER : même chose qu'en 2b Publisher
+        "\"topic_commands\": \"unity/MON_JEU/commands\"," + // ← MODIFIER : même chose qu'en 2b Receiver
+        "\"commandes\": [" +
+
+            // ── PARAMÈTRE 1 ──────────────────────────────────────────────
+            // Copiez-collez ce bloc autant de fois que vous avez de paramètres
+            "{\"nom\": \"mon_parametre\"," +     // ← MODIFIER : même nom que dans OnMqttCommand()
+            " \"label\": \"Mon paramètre\"," +   // ← MODIFIER : texte affiché dans l'interface web
+            " \"type\": \"slider\"," +           // ← NE PAS MODIFIER
+            " \"min\": 0.0," +                   // ← MODIFIER : valeur minimum
+            " \"max\": 10.0," +                  // ← MODIFIER : valeur maximum
+            " \"default\": 1.0," +               // ← MODIFIER : valeur par défaut au démarrage
+            " \"step\": 0.1}" +                  // ← MODIFIER : pas du slider (0.01, 0.1, 0.5, 1...)
+
+            // ── PARAMÈTRE 2 (exemple avec une virgule avant) ─────────────
+            // Ajoutez une virgule après } du paramètre précédent, puis copiez ce bloc
+            // ,{\"nom\": \"mon_parametre_2\"," +
+            //  " \"label\": \"Mon paramètre 2\"," +
+            //  " \"type\": \"slider\"," +
+            //  " \"min\": 0.0, \"max\": 10.0, \"default\": 1.0, \"step\": 0.1}" +
+
+        "]}";
+
+    MQTTPublisher.Instance.PublishRaw("jeu/config", json);
+    Debug.Log("Config envoyée au Main Controller !");
+}
+```
+
 ---
 
-### ⚠️ Règles strictes — à respecter impérativement
-
-Les noms des clés du JSON sont **fixes et obligatoires**. Toute erreur de nom empêchera le controller de se lancer.
-
-| Clé | Valeur attendue | ❌ Ne pas écrire |
-|-----|----------------|-----------------|
-| `"jeu"` | Le nom de votre jeu (libre) | — |
-| `"topic_events"` | Le topic Publisher de votre jeu | `"topic_event"`, `"events"` |
-| `"topic_commands"` | Le topic Receiver de votre jeu | `"topic_command"`, `"commands_topic"` |
-| `"commandes"` | La liste des paramètres | `"commands"`, `"parametres"`, `"sliders"` |
-| `"nom"` | Le nom de la clé lue dans `OnMqttCommand()` | `"name"`, `"key"`, `"id"` |
-| `"label"` | Le texte affiché dans l'interface web | `"title"`, `"text"`, `"name"` |
-| `"type"` | Toujours `"slider"` — c'est la seule valeur acceptée | `"select"`, `"checkbox"`, `"dropdown"` |
-| `"min"` | La valeur minimum du slider | `"minimum"`, `"minVal"` |
-| `"max"` | La valeur maximum du slider | `"maximum"`, `"maxVal"` |
-| `"default"` | La valeur par défaut au démarrage | `"defaultValue"`, `"value"`, `"initial"` |
-| `"step"` | Le pas du slider | `"increment"`, `"pas"` |
-
----
-
-**Exemple tiré du jeu des boules :**
+### Exemple concret — jeu des boules
 
 ```csharp
 void EnvoyerConfig()
@@ -296,13 +339,12 @@ void EnvoyerConfig()
         "{\"jeu\": \"boules\"," +
         "\"topic_events\": \"jeu/boules/evenement\"," +
         "\"topic_commands\": \"unity/commands\"," +
-        "\"commandes\": [" +                          // ← "commandes" et non "commands"
+        "\"commandes\": [" +
 
             "{\"nom\": \"taille\"," +
             " \"label\": \"Taille des boules\"," +
-            " \"type\": \"slider\"," +                // ← toujours "slider"
+            " \"type\": \"slider\"," +
             " \"min\": 0.5, \"max\": 3.0, \"default\": 1.0, \"step\": 0.1}," +
-            //                             ^ "default" et non "defaultValue"
 
             "{\"nom\": \"nombre\"," +
             " \"label\": \"Nombre de boules\"," +
@@ -321,16 +363,38 @@ void EnvoyerConfig()
 }
 ```
 
-**Exemple tiré du jeu d'obstacles (pour comparaison) :**
+### Exemple concret — jeu d'obstacles
 
 ```csharp
-// La structure est exactement la même. Seuls les paramètres changent.
-"{\"nom\": \"vitesse\",    \"label\": \"Vitesse des obstacles\", \"type\": \"slider\", \"min\": 1.0,  \"max\": 20.0, \"default\": 5.0, \"step\": 0.5}," +
-"{\"nom\": \"intervalle\", \"label\": \"Intervalle de spawn\",   \"type\": \"slider\", \"min\": 0.2,  \"max\": 5.0,  \"default\": 2.0, \"step\": 0.1}," +
-"{\"nom\": \"points\",     \"label\": \"Points par esquive\",    \"type\": \"slider\", \"min\": 1.0,  \"max\": 100.0,\"default\": 10.0,\"step\": 1.0}"
-```
+void EnvoyerConfig()
+{
+    string json =
+        "{\"jeu\": \"obstacle\"," +
+        "\"topic_events\": \"jeu/obstacle/evenement\"," +
+        "\"topic_commands\": \"unity/obstacle/commands\"," +
+        "\"commandes\": [" +
 
-> 💡 Ajoutez autant de paramètres que vous voulez dans la liste `"commandes"`. Chacun deviendra un slider dans l'interface web.
+            "{\"nom\": \"vitesse\"," +
+            " \"label\": \"Vitesse des obstacles\"," +
+            " \"type\": \"slider\"," +
+            " \"min\": 1.0, \"max\": 20.0, \"default\": 5.0, \"step\": 0.5}," +
+
+            "{\"nom\": \"intervalle\"," +
+            " \"label\": \"Intervalle de spawn\"," +
+            " \"type\": \"slider\"," +
+            " \"min\": 0.2, \"max\": 5.0, \"default\": 2.0, \"step\": 0.1}," +
+
+            "{\"nom\": \"points\"," +
+            " \"label\": \"Points par esquive\"," +
+            " \"type\": \"slider\"," +
+            " \"min\": 1.0, \"max\": 100.0, \"default\": 10.0, \"step\": 1.0}" +
+
+        "]}";
+
+    MQTTPublisher.Instance.PublishRaw("jeu/config", json);
+    Debug.Log("Config envoyée au Main Controller !");
+}
+```
 
 ---
 
